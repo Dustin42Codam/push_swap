@@ -1,0 +1,16 @@
+Libftest
+a.out
+author
+const.c
+debug
+debug.dSYM
+len.c
+libft-unit-test
+libft.a
+libft.h.gch
+main
+main.c
+main.o
+strcpytest.c
+header.h
+*.o
