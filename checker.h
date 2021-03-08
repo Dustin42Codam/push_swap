@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstnew_bonus.c                                  :+:    :+:            */
+/*   checker.h                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/11 20:54:52 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/08 21:21:04 by dkrecisz      ########   odam.nl         */
+/*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
+/*   Updated: 2021/03/08 20:50:31 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-t_list	*ft_lstnew(int content)
+# include "libft/include/libft.h"
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
+
+typedef struct	s_stack
 {
-	t_list	*new;
+	t_list	*a;
+	t_list	*b;
+}	t_stack;
 
-	new = ft_calloc(1, sizeof(t_list));
-	if (new == NULL)
-		return (NULL);
-	new->content = content;
-	return (new);
-}
+#endif

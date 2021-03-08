@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstclear_bonus.c                                :+:    :+:            */
+/*   test.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/13 13:07:54 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/08 21:24:35 by dkrecisz      ########   odam.nl         */
+/*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
+/*   Updated: 2021/03/08 20:46:59 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include "libft/include/libft.h"
+#include "checker.h"
+#include <limits.h>
 
-void	ft_lstclear(t_list **lst)
+int	main(int argc, char *argv[])
 {
-	t_list	*next;
 
-	while (*lst)
-	{
-		next = (*lst)->next;
-		free(lst);
-		*lst = next;
-	}
-	*lst = NULL;
+	// printf("%ld\n", ft_atol(argv[1]));
+	// printf("%d\n", ft_atoi(argv[1]));
+	// printf("%d\n", atoi(argv[1]));
+
+	if (ft_atol(argv[1]) > INT_MAX)
+		printf("Greater than int.\n");
+	else if (ft_atol(argv[1]) < INT_MIN)
+		printf("Lower than int.\n");
+
+	return (0);
 }

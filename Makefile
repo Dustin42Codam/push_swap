@@ -10,7 +10,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	make -C libft
+	make bonus -C libft
 	$(CC) checker.c libft/libft.a -o checker
 
 %.o: %.c
