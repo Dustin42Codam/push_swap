@@ -3,7 +3,9 @@ NAME = push_swap
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
+
+CHECKER_SRC = checker.c debug.c read_commands.c read_arguments.c
 
 .PHONY: clean fclean re
 
@@ -11,7 +13,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make bonus -C libft
-	$(CC) -g checker.c read_commands.c libft/libft.a -o checker
+	$(CC) $(CHECKER_SRC) libft/libft.a -o checker
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -25,3 +27,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re:	fclean all
+
+test:
+	gcc -g test.c read_commands.c debug.c libft/libft.a && ./a.out

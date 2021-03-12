@@ -6,13 +6,38 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 18:54:27 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/12 18:58:31 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/12 22:52:53 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/include/libft.h"
 #include <stdlib.h>
 #include <unistd.h>
+
+int	validate_commands(char **cmds)
+{
+	const char	*valid_cmds[] = {"sa", "sb", "ss", "pa", \
+								"pb", "ra", "rb", "rr", \
+								"rra", "rrb", "rrr", 0};
+	int			i;
+	int			j;
+
+	i = 0;
+	while (cmds[i])
+	{
+		j = 0;
+		while (valid_cmds[j])
+		{
+			if (ft_strncmp(cmds[i], valid_cmds[j], ft_strlen(cmds[i])) == 0)
+				break ;
+			j++;
+		}
+		if (!valid_cmds[j])
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 static char	*ft_charjoin(char *input, char const c)
 {
@@ -33,10 +58,10 @@ static char	*ft_charjoin(char *input, char const c)
 
 char	**read_commands(void)
 {
-	char	**token;
+	char	**cmds;
 	char	*input;
 	char	buf;
-	int ret;
+	int		ret;
 
 	ret = 1;
 	input = ft_calloc(1, 1);
@@ -51,9 +76,9 @@ char	**read_commands(void)
 		if (!input)
 			return (0);
 	}
-	token = ft_split(input, '\n');
+	cmds = ft_split(input, '\n');
 	free(input);
-	if (!token)
+	if (!cmds)
 		return (0);
-	return (token);
+	return (cmds);
 }
