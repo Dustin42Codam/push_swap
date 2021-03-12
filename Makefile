@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make bonus -C libft
-	$(CC) checker.c libft/libft.a -o checker
+	$(CC) -g checker.c read_commands.c libft/libft.a -o checker
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

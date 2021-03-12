@@ -4,30 +4,36 @@ TODO:
 			+ number of arguments
 			+ only digit
 			+ inside int range
-			+ check for invalid double values
+			+ check for invalid duplicates
 		1.3 Create stack
-			- create two linked lists (populate stack a + empty stack b)
-				- 1st argument = top element of stack a
+			+ create two linked lists (populate stack a + empty stack b)
+				+ 1st argument = top element of stack a
 		1.4 Read insructions from stdin
-			- validate instruction
-			- execute instruction (if necessary)
+			- get next line from stdin
+			- validate all instructions
+			- execute instructions on stack
 		1.5 Error handling
 			+ display "Error\n" on stderr
 			+ free linked list
 		1.6	Evaluation
 			- IF stack A is sorted AND stack B is empty
 				- THEN display "OK\n"
-			- In any other case display "KO\n" 
+			- In any other case display "KO\n"
+	2. Misc
+		-
 
 In progress:
 	1. checker
-		1.3 Create stack
-			- handle 1st element???
+		1.4 Read instructions from stdin
+			- get next line from stdin
+			- validate instructions
 
 Done:
 	+ author file
 	+ Makefile
 	+ Add Libft
+	1.2 Argument check
+	1.3 Create stacks
 
 
 
