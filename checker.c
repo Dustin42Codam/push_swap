@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/12 22:53:15 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/13 05:41:30 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,6 @@ static void	free_nodes(t_list *node)
 	}
 	node = NULL;
 }
-
-/* static void	clean_up(t_stack *stack, char **commands)
-{
-	int	i;
-
-	i = 0;
-	while (commands[i])
-	{
-		free(commands[i]);
-		i++;
-	}
-	free(commands);
-	free_nodes(stack->a);
-	free_nodes(stack->b);
-	free(stack);
-} */
 
 static void	clean_up(t_stack *stack, char **commands, int error)
 {
@@ -71,6 +55,7 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*stack;
 	char	**commands;
+	int		*command_id;
 
 	if (argc > 1)
 	{
@@ -82,6 +67,7 @@ int	main(int argc, char *argv[])
 			clean_up(stack, 0, ERROR);
 		if (validate_commands(commands))
 			clean_up(stack, commands, ERROR);
+		execute_commands(stack, commands);
 		clean_up(stack, commands, NO_ERROR);
 	}
 	return (0);

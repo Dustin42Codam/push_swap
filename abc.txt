@@ -1,5 +1,2 @@
-apple
-orange
-banana
-kiwi
-cherry
+sa
+sb

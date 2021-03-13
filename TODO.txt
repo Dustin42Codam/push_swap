@@ -9,13 +9,14 @@ TODO:
 			+ create two linked lists (populate stack a + empty stack b)
 				+ 1st argument = top element of stack a
 		1.4 Read insructions from stdin
-			- get next line from stdin
-			- validate all instructions
-			- execute instructions on stack
-		1.5 Error handling
+			+ read from stdin
+			+ validate all instructions
+		1.5 Execute instructions on stack
+			- 
+		1.6 Error handling
 			+ display "Error\n" on stderr
 			+ free linked list
-		1.6	Evaluation
+		1.7	Evaluation
 			- IF stack A is sorted AND stack B is empty
 				- THEN display "OK\n"
 			- In any other case display "KO\n"
@@ -24,11 +25,10 @@ TODO:
 
 In progress:
 	1. checker
-		1.4 Read instructions from stdin
-			+ read from stdin
-			- validate instructions
-				- free within subfunction upon error
-				- check error handling
+		1.5 Execute instructions on stack
+		 - give each command a commandID
+		 - create jump table
+		 - execute array of commandIDs with jump table
 
 Done:
 	+ author file
