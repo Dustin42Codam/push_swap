@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/13 05:04:38 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/13 07:10:02 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,30 @@ t_jump	init_table(void)
 	return (table);
 }
 
+static void	init_cmd(t_cmd *cmd)
+{
+	cmd->id = 0;
+	cmd->count = 0;
+}
+
 int	main(void)
 {
-	t_jump	table;
+	int	len = 3;
+	int	*arr = ft_calloc(len + 1, sizeof(int));
 
-	table = init_table();
-	table.function[2]();
+	arr[len] = -1;
+
+
+	int i = 0;
+	while (arr[i])
+	{
+		printf("%d\n", arr[i]);
+		i++;
+	}
+
+
+	// printf("%s\n", cmd.pool[1]);
+	// table = init_table();
+	// table.function[2]();
 	return (0);
 }

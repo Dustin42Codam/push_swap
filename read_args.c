@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   read_arguments.c                                   :+:    :+:            */
+/*   read_args.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 19:34:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/12 21:02:24 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/13 07:46:36 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_dup(t_list *list, int nb)
 	return (0);
 }
 
-int	read_arguments(int argc, char *argv[], t_stack *stack)
+int	read_args(int argc, char *argv[], t_stack *stack)
 {
 	t_list	*node;
 	long	nb;

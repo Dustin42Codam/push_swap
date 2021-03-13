@@ -41,17 +41,18 @@ Done:
 +++++++++++ NOTES ++++++++++++
 
 Valid instructions:
-sa
-sb
-ss
-pa
-pb
-ra
-rb
-rr
-rra
-rrb
-rrr
+ID  NAME
+0.	sa
+1.	sb
+2.	ss
+3.	pa
+4.	pb
+5.	ra
+6.	rb
+7.	rr
+8.	rra
+9.	rrb
+10.	rrr
 
 
 					Bottom -> Top			/* Must be sorted from top to bottom */

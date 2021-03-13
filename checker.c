@@ -6,11 +6,12 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/13 05:41:30 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/13 07:47:33 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "checker.h"
 #include "libft/include/libft.h"
 
@@ -27,19 +28,19 @@ static void	free_nodes(t_list *node)
 	node = NULL;
 }
 
-static void	clean_up(t_stack *stack, char **commands, int error)
+static void	clean_up(t_stack *stack, char **cmds, int error)
 {
 	int	i;
 
 	i = 0;
-	if (commands)
+	if (cmds)
 	{
-		while (commands[i])
+		while (cmds[i])
 		{
-			free(commands[i]);
+			free(cmds[i]);
 			i++;
 		}
-		free(commands);
+		free(cmds);
 	}
 	free_nodes(stack->a);
 	free_nodes(stack->b);
@@ -51,24 +52,41 @@ static void	clean_up(t_stack *stack, char **commands, int error)
 	}
 }
 
+static void	init_cmd(t_cmd *cmd)
+{
+	cmd->id = 0;
+	cmd->count = 0;
+}
+
 int	main(int argc, char *argv[])
 {
-	t_stack	*stack;
-	char	**commands;
-	int		*command_id;
+	t_cmd	cmd;
+	t_stack		*stack;
 
 	if (argc > 1)
 	{
 		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
-		if (read_arguments(argc, argv, stack))
+		if (read_args(argc, argv, stack))
 			clean_up(stack, 0, ERROR);
-		commands = read_commands();
-		if (!commands)
+		init_cmd(&cmd);
+		cmd.list = read_cmds();
+		if (!cmd.list)
 			clean_up(stack, 0, ERROR);
-		if (validate_commands(commands))
-			clean_up(stack, commands, ERROR);
-		execute_commands(stack, commands);
-		clean_up(stack, commands, NO_ERROR);
+		cmd.count = count_cmds(cmd.list);
+		cmd.id = (int *)ft_calloc(cmd.count + 1, sizeof(int));
+		if (!cmd.id)
+			clean_up(stack, cmd.list, ERROR);
+		if (validate_cmds(&cmd))
+		{
+			free(cmd.id);
+			clean_up(stack, cmd.list, ERROR);
+		}
+		// print_all(stack->a, cmd.list);
+		execute_cmds(stack, cmd);
+		// for (int i = 0; i < cmd.count; i++)
+			// printf("[%d]: %d\n", i, cmd.id[i]);
+		free(cmd.id);
+		clean_up(stack, cmd.list, NO_ERROR);
 	}
 	return (0);
 }
