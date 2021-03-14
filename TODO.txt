@@ -12,7 +12,13 @@ TODO:
 			+ read from stdin
 			+ validate all instructions
 		1.5 Execute instructions on stack
-			- 
+			+ give each command a commandID
+			+ create jump table
+			+ execute array of commandIDs with jump table
+			+ swap_a + swap_b + swap_a_b
+			+ push_a + push_b
+			+ rotate_a + rotate_b + rotate_a_b
+			+ rev_rotate_a + rev_rotate_b + rev_rotate_a_b
 		1.6 Error handling
 			+ display "Error\n" on stderr
 			+ free linked list
@@ -24,15 +30,7 @@ TODO:
 		-
 
 In progress:
-	1. checker
-		1.5 Execute instructions on stack
-		 + give each command a commandID
-		 + create jump table
-		 + execute array of commandIDs with jump table
-		 + swap_a + swap_b + swap_a_b
-		 + push_a + push_b
-		 + rotate_a + rotate_b + rotate_a_b
-		 - rev_rotate_a - rev_rotate_b - rev_rotate_a_b
+
 
 Done:
 	+ author file

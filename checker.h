@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 07:59:44 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/14 11:07:25 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char	**read_cmds(void);
 int		validate_cmds(t_cmd *cmd);
 void	execute_cmds(t_stack *stack, t_cmd cmd);
 int		count_cmds(char **list);
+void	evaluate_stack(t_stack *stack);
 
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
