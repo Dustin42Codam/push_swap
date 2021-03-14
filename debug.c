@@ -5,33 +5,45 @@
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/12 21:04:51 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/12 21:58:24 by dkrecisz      ########   odam.nl         */
+/*   Created: 2021/03/12 20:57:21 by dkrecisz      #+#    #+#                 */
+/*   Updated: 2021/03/14 02:48:32 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include <stdio.h>
 
-void	print_all(t_list *list, char **cmds)
+void	print_all(t_stack *stack, char **cmds)
 {
-	int i = 0;
-	if (list)
+	t_list	*tmp;
+	int		i = 0;
+	printf("++++++++++ STACK A ++++++++++\n");
+	if (ft_lstsize(stack->a))
 	{
-		while (list)
+		tmp = stack->a;
+		while (tmp)
 		{
-			printf("[%d] %d\n", i, list->content);
+			printf("[%d] %d\n", i, tmp->content);
 			i++;
-			list = list->next;
+			tmp = tmp->next;
 		}
 	}
-	if (cmds)
+	printf("++++++++++ STACK B ++++++++++\n");
+	if (ft_lstsize(stack->b))
 	{
-		i = 0;
-		while (cmds[i])
+		tmp = stack->b;
+		while (tmp)
 		{
-			printf("[%s]\n", cmds[i]);
+			printf("[%d] %d\n", i, tmp->content);
 			i++;
+			tmp = tmp->next;
 		}
+	}
+	printf("++++++++++++ END +++++++++++++\n");
+	return ;
+	i = 0;
+	while (cmds[i])
+	{
+		printf("[%s]\n", cmds[i]);
+		i++;
 	}
 }

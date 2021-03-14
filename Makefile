@@ -6,7 +6,7 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror -g
 
 CHECKER_SRC = checker.c debug.c read_cmds.c read_args.c \
-				execute_cmds.c swap.c
+				execute_cmds.c swap.c push.c
 
 .PHONY: clean fclean re
 

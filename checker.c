@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/13 07:47:33 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/14 02:07:22 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int	main(int argc, char *argv[])
 			clean_up(stack, cmd.list, ERROR);
 		}
 		// print_all(stack->a, cmd.list);
+		// print_all(stack->a, 0);
 		execute_cmds(stack, cmd);
 		// for (int i = 0; i < cmd.count; i++)
 			// printf("[%d]: %d\n", i, cmd.id[i]);

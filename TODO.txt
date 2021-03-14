@@ -26,9 +26,11 @@ TODO:
 In progress:
 	1. checker
 		1.5 Execute instructions on stack
-		 - give each command a commandID
-		 - create jump table
-		 - execute array of commandIDs with jump table
+		 + give each command a commandID
+		 + create jump table
+		 + execute array of commandIDs with jump table
+		 + swap_a + swap_b + swap_a_b
+		 - push_a - push_b
 
 Done:
 	+ author file
