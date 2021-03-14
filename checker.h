@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 02:39:45 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/14 07:14:42 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ void	swap_b(t_stack *stack);
 void	swap_a_b(t_stack *stack);
 void	push_a(t_stack *stack);
 void	push_b(t_stack *stack);
+void	rotate_a(t_stack *stack);
+void	rotate_b(t_stack *stack);
+void	rotate_a_b(t_stack *stack);
 
 /** Debug function - delete later **/
 void	print_all(t_stack *stack, char **cmds);

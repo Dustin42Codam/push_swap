@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/14 01:17:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 03:25:44 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/14 07:13:18 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,6 @@
  *	2.	|A|->|1|->|2|->|3|->|6|->|0|	|B|->|4|->|5|->|0|
  *
  * **/
-
-/* void	push_a(t_stack *stack)
-{
-	t_list	*last_b;
-	t_list	*tmp;
-
-	if (ft_lstsize(stack->b) == 0)
-		return ;
-	last_b = ft_lstlast(stack->b);
-
-	tmp = stack->b;
-	while (tmp->next->next != 0)
-		tmp = tmp->next;
-	tmp->next = 0;
-	ft_lstadd_back(&stack->a, last_b);
-} */
 
 void	push_a(t_stack *stack)
 {
@@ -55,7 +39,6 @@ void	push_a(t_stack *stack)
 	else
 	{
 		last_b = ft_lstlast(stack->b);
-
 		tmp = stack->b;
 		while (tmp->next->next != 0)
 			tmp = tmp->next;
@@ -82,7 +65,6 @@ void	push_b(t_stack *stack)
 	else
 	{
 		last_a = ft_lstlast(stack->a);
-
 		tmp = stack->a;
 		while (tmp->next->next != 0)
 			tmp = tmp->next;
