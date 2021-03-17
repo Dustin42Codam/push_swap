@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/13 02:27:31 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 07:52:06 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/14 11:32:47 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,12 @@ void	execute_cmds(t_stack *stack, t_cmd cmd)
 {
 	t_jump	jump;
 	int		i;
-	char	buf;	//del later
-	// print_all(stack, 0);
 
 	i = 0;
 	init_table(&jump);
 	while (i < cmd.count)
 	{
-		read(0, &buf, 1);
 		jump.table[cmd.id[i]](stack);
-		print_all(stack, 0);
 		i++;
 	}
 }

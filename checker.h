@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 11:07:25 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/17 23:10:17 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 //Delete later
 # include <stdio.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
@@ -45,7 +46,10 @@ typedef struct s_jump
 	t_function	*table[11];
 }	t_jump;
 
-int		read_args(int argc, char *argv[], t_stack *stack);
+int		read_argv(int argc, char *argv[], t_stack *stack);
+// int		read_single_arg(int argc, char *argv[], t_stack *stack);
+// int		read_multiple_args(int argc, char *argv[], t_stack *stack);
+
 char	**read_cmds(void);
 int		validate_cmds(t_cmd *cmd);
 void	execute_cmds(t_stack *stack, t_cmd cmd);

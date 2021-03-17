@@ -1,6 +1,6 @@
 #!bin/bash
 
-CMD="./checker 21 42 1337 69 88"
+CMD="./checker 2 1 3 6 5 8"
 
 echo $CMD
 $CMD

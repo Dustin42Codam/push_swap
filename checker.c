@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 11:27:58 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/17 23:38:35 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,16 @@ static void	init_cmd(t_cmd *cmd)
 
 int	main(int argc, char *argv[])
 {
-	t_cmd	cmd;
+	t_cmd		cmd;
 	t_stack		*stack;
 
 	if (argc > 1)
 	{
 		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
-		if (read_args(argc, argv, stack))
+		if (read_argv(argc, argv, stack))
 			clean_up(stack, 0, ERROR);
+		clean_up(stack, 0, NO_ERROR); //delete later
+		/*
 		init_cmd(&cmd);
 		cmd.list = read_cmds();
 		if (!cmd.list)
@@ -85,6 +87,7 @@ int	main(int argc, char *argv[])
 		evaluate_stack(stack);
 		free(cmd.id);
 		clean_up(stack, cmd.list, NO_ERROR);
+		*/
 	}
 	return (0);
 }

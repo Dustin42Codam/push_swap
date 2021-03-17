@@ -6,16 +6,11 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/14 11:06:16 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 11:21:40 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/17 23:23:42 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-static void	display_ko(void)
-{
-	ft_putstr_fd("KO\n", 1);
-}
 
 void	evaluate_stack(t_stack *stack)
 {
