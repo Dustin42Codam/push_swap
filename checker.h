@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/17 23:10:17 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/18 07:46:52 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@
 # define INT_MAX 2147483647
 # define ERROR 1
 # define NO_ERROR 0
+
+# define COLORS 1
+# define DEBUG 2
+# define FILE 4
+# define SLOMO 8
+
+typedef struct s_flags
+{
+	unsigned int	bitfield : 5;
+}	t_flags;
 
 typedef struct s_stack
 {
@@ -46,13 +56,13 @@ typedef struct s_jump
 	t_function	*table[11];
 }	t_jump;
 
-int		read_argv(int argc, char *argv[], t_stack *stack);
+int		read_argv(int ac, char *av[], t_stack *stack, t_flags *flags);
 // int		read_single_arg(int argc, char *argv[], t_stack *stack);
 // int		read_multiple_args(int argc, char *argv[], t_stack *stack);
 
 char	**read_cmds(void);
 int		validate_cmds(t_cmd *cmd);
-void	execute_cmds(t_stack *stack, t_cmd cmd);
+void	execute_cmds(t_stack *stack, t_cmd cmd, t_flags flags);
 int		count_cmds(char **list);
 void	evaluate_stack(t_stack *stack);
 

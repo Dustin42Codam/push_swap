@@ -6,7 +6,7 @@ CC = clang
 #CFLAGS = -Wall -Wextra -Werror -g
 CFLAGS = -g
 
-CHECKER_SRC = checker.c debug.c read_cmds.c read_argv.c \
+CHECKER_SRC = checker.c bonus.c read_cmds.c read_argv.c \
 				execute_cmds.c swap.c push.c rotate.c reverse_rotate.c \
 				evaluate_stack.c
 PUSH_SWAP_SRC = push_swap.c

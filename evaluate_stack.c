@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/14 11:06:16 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/17 23:23:42 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/18 09:16:55 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 void	evaluate_stack(t_stack *stack)
 {
+	t_list	*tmp;
+
+	tmp = stack->a;
 	if (ft_lstsize(stack->b))
 	{
 		ft_putstr_fd("KO\n", 1);
 		return ;
 	}
-	while (stack->a->next)
+	while (tmp->next)
 	{
-		if (stack->a->content < stack->a->next->content)
+		if (tmp->content < tmp->next->content)
 		{
 			ft_putstr_fd("KO\n", 1);
 			return ;
 		}
-		stack->a = stack->a->next;
+		tmp = tmp->next;
 	}
 	ft_putstr_fd("OK\n", 1);
 }

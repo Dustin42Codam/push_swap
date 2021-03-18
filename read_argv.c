@@ -6,15 +6,15 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 19:34:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/17 23:35:11 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/18 09:11:22 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	check_dup(t_list *list, int nb)
+static int	check_dup(t_list *list, t_list *node, int nb)
 {
-	while (list && list->next)
+	while (list && list != node)
 	{
 		if (list->content == nb)
 			return (1);
@@ -26,8 +26,8 @@ static int	check_dup(t_list *list, int nb)
 static int	read_single_arg(char *arg, t_stack *stack)
 {
 	t_list	*node;
+	size_t	i;
 	long	nb;
-	int		i;
 
 	i = 0;
 	while (arg[i])
@@ -39,8 +39,9 @@ static int	read_single_arg(char *arg, t_stack *stack)
 			return (1);
 		node = ft_lstnew((int)nb);
 		if (node)
-			ft_lstadd_back(&stack->a, node);
-		if (!node || nb > INT_MAX || nb < INT_MIN || check_dup(stack->a, nb))
+			ft_lstadd_front(&stack->a, node);
+		if (!node || nb > INT_MAX || nb < INT_MIN || \
+			check_dup(stack->a->next, node, nb))
 			return (1);
 		i += ft_numlen(nb);
 		while (ft_isspace(arg[i]))
@@ -49,13 +50,13 @@ static int	read_single_arg(char *arg, t_stack *stack)
 	return (0);
 }
 
-static int	read_multiple_args(int ac, char *av[], t_stack *stack)
+static int	read_multiple_args(int ac, char *av[], t_stack *stack, int flags)
 {
 	t_list	*node;
+	size_t	i;
 	long	nb;
-	int		i;
 
-	while (ac > 1)
+	while (ac > 1 + flags)
 	{
 		i = 0;
 		ac--;
@@ -71,16 +72,43 @@ static int	read_multiple_args(int ac, char *av[], t_stack *stack)
 		node = ft_lstnew((int)nb);
 		if (node)
 			ft_lstadd_back(&stack->a, node);
-		if (!node || nb > INT_MAX || nb < INT_MIN || check_dup(stack->a, nb))
+		if (!node || nb > INT_MAX || nb < INT_MIN || \
+			check_dup(stack->a, node, nb))
 			return (1);
 	}
 	return (0);
 }
 
-int	read_argv(int ac, char *av[], t_stack *stack)
+static int	read_flags(char *av[], t_flags **flags)
 {
-	if (ac == 2)
-		return (read_single_arg(av[1], stack));
+	size_t	i;
+
+	i = 1;
+	(*flags)->bitfield = 0;
+	while (av[i])
+	{
+		if (ft_strncmp("-c", av[i], 3) == 0)
+			(*flags)->bitfield |= COLORS;
+		else if (ft_strncmp("-v", av[i], 3) == 0)
+			(*flags)->bitfield |= DEBUG;
+		else if (ft_strncmp("-f", av[i], 3) == 0)
+			(*flags)->bitfield |= FILE;
+		else if (ft_strncmp("-s", av[i], 3) == 0)
+			(*flags)->bitfield |= SLOMO;
+		else
+			return (i - 1);
+		i++;
+	}
+	return (i - 1);
+}
+
+int	read_argv(int ac, char *av[], t_stack *stack, t_flags *flags)
+{
+	int	flag_count;
+
+	flag_count = read_flags(av, &flags);
+	if (ac == 2 + flag_count)
+		return (read_single_arg(av[1 + flag_count], stack));
 	else
-		return (read_multiple_args(ac, av, stack));
+		return (read_multiple_args(ac, av, stack, flag_count));
 }

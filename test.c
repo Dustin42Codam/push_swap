@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/17 23:27:28 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/18 07:06:08 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,24 @@
 
 int	main(int argc, char *argv[])
 {
-	if (argc == 2)
-		printf("%d\n", atoi(argv[1]));
+	t_flags	flags;
+
+	flags.bitfield = 0;
+	// printf("%d\n", flags.bitfield);
+	// flags.bitfield |= COLORS;
+	// printf("%d\n", flags.bitfield);
+	flags.bitfield |= DEBUG;
+	// printf("%d\n", flags.bitfield);
+	// flags.bitfield |= FILE;
+	// printf("%d\n", flags.bitfield);
+	flags.bitfield |= SLOMO;
+	// printf("%d\n", flags.bitfield);
+
+	//	16  8  4  2  1
+	//	 0  0  0  1  0
+	//	 0  1  0  1  0
+
+	printf("%d\n", argc);
+
 	return (0);
 }
