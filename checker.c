@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/18 09:17:14 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/19 02:35:15 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int argc, char *argv[])
 
 	if (argc > 1)
 	{
-		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
+		stack = (t_stack *)ft_calloc(1, sizeof(t_stack)); //malloc check!
 		if (read_argv(argc, argv, stack, &flags))
 			clean_up(stack, 0, ERROR);
 		init_cmd(&cmd);

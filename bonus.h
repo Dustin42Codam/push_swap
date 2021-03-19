@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 07:33:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/18 07:49:12 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/19 04:22:37 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@
 /** Reset **/
 # define RESET "\e[0m"
 
-void	print_stack_bonus(t_stack *stack);
+typedef struct	s_print
+{
+	size_t	padding;
+}				t_print;
+
+void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count);
+void	press_enter_bonus(void);
 
 #endif

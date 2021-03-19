@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/13 02:27:31 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/18 07:48:53 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/19 04:21:02 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,15 @@ void	execute_cmds(t_stack *stack, t_cmd cmd, t_flags flags)
 
 	i = 0;
 	init_table(&jump);
+	if (flags.bitfield & DEBUG)
+		print_stacks_bonus(stack, cmd, i);
 	while (i < cmd.count)
 	{
-		if (flags.bitfield & DEBUG)
-			print_stack_bonus(stack);
-		if (flags.bitfield & SLOMO)
-			read(1, 0, 0);
 		jump.table[cmd.id[i]](stack);
+		if (flags.bitfield & DEBUG)
+			print_stacks_bonus(stack, cmd, i);
+		if (flags.bitfield & SLOMO)
+			press_enter_bonus();
 		i++;
 	}
 }

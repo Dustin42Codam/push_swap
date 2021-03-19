@@ -7,6 +7,7 @@ TODO:
 			+ check for invalid duplicates
 			- Create parent function for read_arg_str() and read_args()
 			+ Parse 1st arg as a string of integers if only 1 arg
+			- malloc check stack
 			- Norm check checker.c
 		1.3 Create stack
 			+ create two linked lists (populate stack a + empty stack b)
@@ -35,8 +36,12 @@ TODO:
 		-	include CFLAGS in makefile compilation step
 		-	create tests (criterion?)
 	3. Bonus
-		- Debug option -v that can display the stack’s status 
+		+ Debug option -v that can display the stack’s status 
 			after each operation
+		+ Slow motion option that enables to execute the next
+			instruction after hitting enter.
+		- -h flag to print out usage
+		- delete unnecassary bonus flags?
 
 In progress:
 	3. Bonus

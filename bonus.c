@@ -6,58 +6,62 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 20:57:21 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/18 08:12:04 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/19 04:23:34 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include "bonus.h"
 
-static void print_stack_a(t_list *element)
-{
-	if (element->next)
-		print_stack_a(element->next);
-	printf("%d\n", element->content);
-}
-
-void	print_stack_bonus(t_stack *stack)
-{
-	printf("++++++++++ STACK A ++++++++++\n");
-	print_stack_a(stack->a);
-	printf("++++++++++++ END +++++++++++++\n");
-}
-
-void	print_all(t_stack *stack, char **cmds)
+static int	get_node(t_list *stack, int i)
 {
 	t_list	*tmp;
-	int		i = 0;
-	printf("++++++++++ STACK A ++++++++++\n");
-	if (ft_lstsize(stack->a))
+
+	tmp = stack;
+	while (i)
 	{
-		tmp = stack->a;
-		while (tmp)
-		{
-			printf("[%d] %d\n", i, tmp->content);
-			i++;
-			tmp = tmp->next;
-		}
+		tmp = tmp->next;
+		i--;
 	}
-	printf("++++++++++ STACK B ++++++++++\n");
-	if (ft_lstsize(stack->b))
+	return (tmp->content);
+}
+
+void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count)
+{
+	t_print	print;
+	int		len_a;
+	int		len_b;
+	int		pos;
+
+	len_a = ft_lstsize(stack->a);
+	len_b = ft_lstsize(stack->b);
+	pos = len_a + len_b;
+	printf("------------------------------");
+	printf("\nInstruction #%d %s\n\n", count, cmd.list[count]);
+	while (pos)
 	{
-		tmp = stack->b;
-		while (tmp)
-		{
-			printf("[%d] %d\n", i, tmp->content);
-			i++;
-			tmp = tmp->next;
-		}
+		if (pos > len_a && pos > len_b)
+			printf("%-28s\n", " ");
+		else if (pos <= len_a && pos > len_b)
+			printf("%-4s%10d%-14s\n", " ", get_node(stack->a, pos - 1), " ");
+		else if (pos > len_a && pos <= len_b)
+			printf("%-18s%10d\n", " ", get_node(stack->b, pos - 1));
+		else
+			printf("%-4s%10d%-4s%10d\n", " ", get_node(stack->a, pos - 1), \
+										" ", get_node(stack->b, pos - 1));
+		pos--;
 	}
-	printf("++++++++++++ END +++++++++++++\n");
-	return ;
-	i = 0;
-	while (cmds[i])
+	printf("%-4s%10s%-4s%10s\n", " ", "Stack A", " ", "Stack B");
+}
+
+void	press_enter_bonus(void)
+{
+	char enter;
+
+	enter = 0;
+	printf("\nPress enter to continue...\n");
+	while (enter != '\r' && enter != '\n')
 	{
-		printf("[%s]\n", cmds[i]);
-		i++;
+		enter = getchar();
 	}
 }
