@@ -5,12 +5,12 @@
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/24 21:39:58 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/24 21:42:28 by dkrecisz      ########   odam.nl         */
+/*   Created: 2021/03/12 19:34:17 by dkrecisz      #+#    #+#                 */
+/*   Updated: 2021/03/24 21:17:02 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static int	check_dup(t_list *list, t_list *node, int nb)
 {
@@ -50,13 +50,13 @@ static int	read_single_arg(char *arg, t_stack *stack)
 	return (NO_ERROR);
 }
 
-static int	read_multiple_args(int ac, char *av[], t_stack *stack)
+static int	read_multiple_args(int ac, char *av[], t_stack *stack, int flags)
 {
 	t_list	*node;
 	size_t	i;
 	long	nb;
 
-	while (ac > 1)
+	while (ac > 1 + flags)
 	{
 		i = 0;
 		ac--;
@@ -79,12 +79,38 @@ static int	read_multiple_args(int ac, char *av[], t_stack *stack)
 	return (NO_ERROR);
 }
 
-int	read_argv(int ac, char *av[], t_stack *stack)
+static int	read_flags(char *av[], t_flags **flags)
 {
+	size_t	i;
+
+	i = 1;
+	(*flags)->bitfield = 0;
+	while (av[i])
+	{
+		if (ft_strncmp("-c", av[i], 3) == 0)
+			(*flags)->bitfield |= COLORS;
+		else if (ft_strncmp("-v", av[i], 3) == 0)
+			(*flags)->bitfield |= DEBUG;
+		else if (ft_strncmp("-f", av[i], 3) == 0)
+			(*flags)->bitfield |= READ_FILE;
+		else if (ft_strncmp("-s", av[i], 3) == 0)
+			(*flags)->bitfield |= SLOMO;
+		else
+			return (i - 1);
+		i++;
+	}
+	return (i - 1);
+}
+
+int	read_argv(int ac, char *av[], t_stack *stack, t_flags *flags)
+{
+	int	flag_count;
+
 	if (stack == 0)
 		return (ERROR);
-	if (ac == 2)
-		return (read_single_arg(av[1], stack));
+	flag_count = read_flags(av, &flags);
+	if (ac == 2 + flag_count)
+		return (read_single_arg(av[1 + flag_count], stack));
 	else
-		return (read_multiple_args(ac, av, stack));
+		return (read_multiple_args(ac, av, stack, flag_count));
 }

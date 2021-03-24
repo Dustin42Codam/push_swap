@@ -6,20 +6,12 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/19 04:21:37 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/24 21:16:49 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
-
-# include "libft/include/libft.h"
-
-# include <fcntl.h>
-//Delete later
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
@@ -28,8 +20,10 @@
 
 # define COLORS 1
 # define DEBUG 2
-# define FILE 4
+# define READ_FILE 4
 # define SLOMO 8
+
+# include "../libft/include/libft.h"
 
 typedef struct s_flags
 {
@@ -57,9 +51,6 @@ typedef struct s_jump
 }	t_jump;
 
 int		read_argv(int ac, char *av[], t_stack *stack, t_flags *flags);
-// int		read_single_arg(int argc, char *argv[], t_stack *stack);
-// int		read_multiple_args(int argc, char *argv[], t_stack *stack);
-
 char	**read_cmds(void);
 int		validate_cmds(t_cmd *cmd);
 void	execute_cmds(t_stack *stack, t_cmd cmd, t_flags flags);

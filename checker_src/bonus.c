@@ -6,12 +6,13 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 20:57:21 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/19 04:23:34 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/24 21:15:52 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "bonus.h"
+#include <stdio.h>
 
 static int	get_node(t_list *stack, int i)
 {
@@ -28,7 +29,6 @@ static int	get_node(t_list *stack, int i)
 
 void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count)
 {
-	t_print	print;
 	int		len_a;
 	int		len_b;
 	int		pos;

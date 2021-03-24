@@ -6,14 +6,12 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/19 02:35:15 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/24 21:09:50 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "checker.h"
-#include "libft/include/libft.h"
+#include <stdlib.h>
 
 static void	free_nodes(t_list *node)
 {
@@ -42,9 +40,12 @@ static void	clean_up(t_stack *stack, char **cmds, int error)
 		}
 		free(cmds);
 	}
-	free_nodes(stack->a);
-	free_nodes(stack->b);
-	free(stack);
+	if (stack)
+	{
+		free_nodes(stack->a);
+		free_nodes(stack->b);
+		free(stack);
+	}
 	if (error)
 	{
 		ft_putstr_fd("Error\n", 2);
@@ -66,14 +67,14 @@ int	main(int argc, char *argv[])
 
 	if (argc > 1)
 	{
-		stack = (t_stack *)ft_calloc(1, sizeof(t_stack)); //malloc check!
+		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
 		if (read_argv(argc, argv, stack, &flags))
 			clean_up(stack, 0, ERROR);
 		init_cmd(&cmd);
 		cmd.list = read_cmds();
 		if (!cmd.list)
 			clean_up(stack, 0, ERROR);
-		cmd.count = count_cmds(cmd.list);
+		cmd.count = count_cmds(cmd.list);	//delete ? replace ft with vars
 		cmd.id = (int *)ft_calloc(cmd.count + 1, sizeof(int));
 		if (!cmd.id)
 			clean_up(stack, cmd.list, ERROR);

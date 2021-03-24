@@ -1,18 +1,6 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   read_cmds.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/03/13 07:45:50 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/13 07:45:51 by dkrecisz      ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
 /*   read_cmds.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
@@ -22,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/include/libft.h"
 #include "checker.h"
 #include <stdlib.h>
 #include <unistd.h>
@@ -36,12 +23,6 @@ int	count_cmds(char **list)
 		i++;
 	return (i);
 }
-
-/* static void	add_cmd_id(t_cmd **cmd, int cmd_id, int i)
-{
-	if (i == 0)
-	
-} */
 
 int	validate_cmds(t_cmd *cmd)
 {
@@ -96,9 +77,7 @@ char	**read_cmds(void)
 
 	ret = 1;
 	input = ft_calloc(1, 1);
-	if (!input)
-		return (0);
-	while (ret > 0)
+	while (input && ret > 0)
 	{
 		ret = read(0, &buf, 1);
 		if (ret == -1)

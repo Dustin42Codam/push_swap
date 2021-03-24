@@ -6,35 +6,34 @@ CC = clang
 #CFLAGS = -Wall -Wextra -Werror -g
 CFLAGS = -g
 
-CHECKER_SRC = checker.c bonus.c read_cmds.c read_argv.c \
-				execute_cmds.c swap.c push.c rotate.c reverse_rotate.c \
-				evaluate_stack.c
-PUSH_SWAP_SRC = push_swap.c
+SRC = push_swap.c read_argv.c
 
-OBJ = $(CHECKER_SRC:%.c=%.o)
+OBJ = $(SRC:%.c=%.o)
+
+LIBFT = ./libft
+CHECKER = ./checker_src
 
 .PHONY: clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	make bonus -C libft
-	$(CC) $(CHECKER_SRC) libft/libft.a -o checker
-	$(CC) $(PUSH_SWAP_SRC) libft/libft.a -o $(NAME)
+	make bonus -C $(LIBFT)
+	make -C $(CHECKER)
+	mv $(CHECKER)/checker .
+	$(CC) $(SRC) $(LIBFT)/libft.a -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	make clean -C libft
+	make clean -C $(LIBFT)
+	make clean -C $(CHECKER)
 	rm -f $(OBJ)
 
 fclean: clean
-	make fclean -C libft
+	make fclean -C $(LIBFT)
 	rm -f checker
 	rm -f $(NAME)
 
 re:	fclean all
-
-test:
-	gcc -g test.c read_commands.c debug.c libft/libft.a && ./a.out

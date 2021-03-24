@@ -5,7 +5,7 @@ TODO:
 			+ only digit
 			+ inside int range
 			+ check for invalid duplicates
-			- Create parent function for read_arg_str() and read_args()
+			+ Create parent function for read_arg_str() and read_args()
 			+ Parse 1st arg as a string of integers if only 1 arg
 			- malloc check stack
 			- Norm check checker.c
@@ -30,12 +30,15 @@ TODO:
 			- IF stack A is sorted AND stack B is empty
 				- THEN display "OK\n"
 			- In any other case display "KO\n"
-	2. Misc
+	2. push_swap
+		2.1	Argument check
+			- Copy arg reading from checker.c
+	3. Misc
 		-	ssize_t ft_putchar
 			-	protect each write
 		-	include CFLAGS in makefile compilation step
 		-	create tests (criterion?)
-	3. Bonus
+	4. Bonus
 		+ Debug option -v that can display the stack’s status 
 			after each operation
 		+ Slow motion option that enables to execute the next
@@ -44,12 +47,11 @@ TODO:
 		- delete unnecassary bonus flags?
 
 In progress:
-	3. Bonus
-		- Debug option -v that can display the stack’s status 
-			after each operation
 	1.	Checker
-		1.2	Argument check
-			- validate norm for checker.c
+		-	norm check
+	2.	push_swap
+		-	Test passing instructions to checker
+		-	create simple sorting algorithm
 
 Done:
 	+ author file

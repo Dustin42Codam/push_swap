@@ -6,14 +6,12 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 07:33:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/19 04:22:37 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/24 21:13:45 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BONUS_H
 # define BONUS_H
-
-# include <stdio.h>
 
 /** Regular text **/
 # define BLK "\e[0;30m"
