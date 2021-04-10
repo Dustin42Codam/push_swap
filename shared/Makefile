@@ -5,44 +5,35 @@
 #                                                      +:+                     #
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2021/04/10 22:16:28 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/11 00:07:14 by dkrecisz      ########   odam.nl          #
+#    Created: 2021/04/10 23:45:26 by dkrecisz      #+#    #+#                  #
+#    Updated: 2021/04/10 23:46:11 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = stack.a
 
-LIBFT = ./libft
-SHARED = ./shared
-CHECKER = ./checker_src
-PUSH_SWAP = ./push_swap_src
+SRC = push.c swap.c rotate.c reverse_rotate.c
 
-CC = clang
+OBJ = $(SRC:%.c=%.o)
 
-CFLAGS = -Wall -Wextra -Werror
+ifndef CFLAGS
+	CFLAGS = -Wall -Wextra -Werror
+endif
+
+.PHONY: clean fclean re
 
 all: $(NAME)
 
-$(NAME):
-	make -C $(LIBFT) CC=$(CC) CFLAGS=$(CFLAGS)
-	make -C $(SHARED) CC=$(CC) CFLAGS=$(CFLAGS)
-	make -C $(CHECKER) CC=$(CC) CFLAGS=$(CFLAGS)
-	cp $(CHECKER)/checker .
-	make -C $(PUSH_SWAP) CC=$(CC) CFLAGS=$(CFLAGS)
-	cp $(PUSH_SWAP)/push_swap ./$(NAME)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	make clean -C $(LIBFT)
-	make clean -C $(SHARED)
-	make clean -C $(CHECKER)
-	make clean -C $(PUSH_SWAP)
+	rm -f $(OBJ)
 
 fclean: clean
-	make fclean -C $(LIBFT)
-	make fclean -C $(SHARED)
-	make fclean -C $(CHECKER)
-	make fclean -C $(PUSH_SWAP)
 	rm -f $(NAME)
-	rm -f checker
 
 re: fclean all

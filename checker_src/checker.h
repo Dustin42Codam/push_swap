@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/31 14:07:16 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/10 22:56:15 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,13 @@
 # define SLOMO 8
 
 # include "../libft/include/libft.h"
+# include "../shared/stack.h"
 # include <stdio.h>
 
 typedef struct s_flags
 {
 	unsigned int	bitfield : 5;
 }	t_flags;
-
-typedef struct s_stack
-{
-	t_list	*a;
-	t_list	*b;
-}	t_stack;
 
 typedef struct s_cmd
 {
@@ -57,17 +52,5 @@ int		validate_cmds(t_cmd *cmd);
 void	execute_cmds(t_stack *stack, t_cmd cmd, t_flags flags);
 int		count_cmds(char **list);
 void	evaluate_stack(t_stack *stack);
-
-void	swap_a(t_stack *stack);
-void	swap_b(t_stack *stack);
-void	swap_a_b(t_stack *stack);
-void	push_a(t_stack *stack);
-void	push_b(t_stack *stack);
-void	rotate_a(t_stack *stack);
-void	rotate_b(t_stack *stack);
-void	rotate_a_b(t_stack *stack);
-void	reverse_rotate_a(t_stack *stack);
-void	reverse_rotate_b(t_stack *stack);
-void	reverse_rotate_a_b(t_stack *stack);
 
 #endif

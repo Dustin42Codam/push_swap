@@ -6,12 +6,13 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/13 02:27:31 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/19 04:21:02 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/10 22:56:45 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "bonus.h"
+#include "../shared/stack.h"
 
 void	init_table(t_jump *jump)
 {

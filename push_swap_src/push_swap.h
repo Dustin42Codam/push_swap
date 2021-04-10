@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/24 21:28:09 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/31 17:40:46 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/10 22:26:25 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # define ERROR 1
 # define NO_ERROR 0
 
-# include "libft/include/libft.h"
+# include "../libft/include/libft.h"
 
 // debug stuff delete later
 #include <stdio.h>

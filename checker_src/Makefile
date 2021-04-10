@@ -1,18 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2021/04/10 23:12:08 by dkrecisz      #+#    #+#                  #
+#    Updated: 2021/04/10 23:58:48 by dkrecisz      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = checker
 
-CC = clang
-
-CFLAGS = -Wall -Wextra -Werror -g
-
-CHECKER_SRC = checker.c bonus.c read_cmds.c read_argv.c \
-				execute_cmds.c swap.c push.c rotate.c reverse_rotate.c \
-				evaluate_stack.c
-PUSH_SWAP_SRC = push_swap.c
+SRC =	checker.c bonus.c read_cmds.c read_argv.c \
+		execute_cmds.c evaluate_stack.c
 
 LIBFT = ../libft
 
-OBJ = $(CHECKER_SRC:%.c=%.o)
+SHARED = ../shared
+
+OBJ = $(SRC:%.c=%.o)
+
+ifndef CFLAGS
+	CFLAGS = -Wall -Wextra -Werror
+endif
 
 .PHONY: clean fclean re
 
@@ -20,17 +31,16 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make bonus -C $(LIBFT)
-	$(CC) $(CHECKER_SRC) $(LIBFT)/libft.a -o $(NAME)
+	make -C $(SHARED)
+	$(CC) $(OBJ) $(SHARED)/stack.a $(LIBFT)/libft.a -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	make clean -C $(LIBFT)
 	rm -f $(OBJ)
 
 fclean: clean
-	make fclean -C $(LIBFT)
 	rm -f $(NAME)
 
 re:	fclean all

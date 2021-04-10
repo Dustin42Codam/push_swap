@@ -6,11 +6,11 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/14 07:12:46 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 07:47:09 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/10 23:03:00 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack.h"
 
 void	rotate_a(t_stack *stack)
 {

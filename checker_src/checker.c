@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/31 14:05:05 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/10 23:31:03 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ int	main(int argc, char *argv[])
 		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
 		if (read_argv(argc, argv, stack, &flags))
 			clean_up(stack, 0, ERROR);
-		printf("%d\n", stack->a->content);
-		exit(42);
 		init_cmd(&cmd);
 		cmd.list = read_cmds();
 		if (!cmd.list)

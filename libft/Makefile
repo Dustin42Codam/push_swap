@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.n>          +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/11/15 19:33:12 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/03/18 06:49:59 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/10 23:13:53 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ ODIR = ./obj
 OBJ = $(SRC:%.c=$(ODIR)/%.o)
 BOBJ = $(BSRC:%.c=$(ODIR)/%.o)
 
-CFLAGS = -Wall -Wextra -Werror
+ifndef CFLAGS
+	CFLAGS = -Wall -Wextra -Werror
+endif
 
 .PHONY: all clean fclean re bonus
 
@@ -43,11 +45,11 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(ODIR)/%.o: %.c
 	@mkdir -p $(ODIR)
-	gcc $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BOBJ): $(ODIR)/%.o: %.c
 	@mkdir -p $(ODIR)
-	gcc $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(NAME) | $(BOBJ)
 	@ar rcs $(NAME) $|

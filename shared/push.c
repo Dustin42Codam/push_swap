@@ -6,11 +6,11 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/14 01:17:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/14 07:13:18 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/10 23:02:53 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "stack.h"
 
 /**
  * 		Idea:
