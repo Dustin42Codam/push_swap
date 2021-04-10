@@ -1,0 +1,24 @@
+
+paste to https://app.code2flow.com/
+
+push_swap;
+while (stack_b is not empty || stack_a not sorted)
+{
+  if(stack_a[top] < median?)
+    pb;
+  if (stack_b_len >= 2 && stack_a[top] > stack_a[top - 1] && stack_b[top] < stack_b[top - 1]?)
+    ss;
+  if (stack_a[top] > stack_a[top - 1]?)
+    sa;
+  else
+  {
+    if (next value < median in upper half?)
+      ra;
+    else if (next value < median in lower half?)
+      rra;
+    else if (same distance to next min value in lower && in upper half?)
+      rotate the lowest value of the two to the top of the stack;
+  }
+  if (no value < median in stack_a)
+    break ;
+}

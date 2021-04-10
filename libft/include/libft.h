@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:10:15 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/17 23:07:34 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/02 16:52:17 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 typedef struct s_list
 {
 	int				content;
+	unsigned int	index;
+	unsigned int	sort_id;
+	unsigned char	check;
 	struct s_list	*next;
 }				t_list;
 

@@ -1,0 +1,25 @@
+501 3 613 -1 812 7 703 333 100 450 42 -21 200 999 25
+sa
+pb
+rra
+pb
+ra
+ra
+pb
+ss
+pb
+ss
+ra
+sa
+ra
+sa
+pb
+sa
+ra
+sa
+pb
+ss
+pb
+ss
+
+

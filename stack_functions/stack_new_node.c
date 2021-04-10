@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   stack_new_node.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/24 21:28:09 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/24 21:47:22 by dkrecisz      ########   odam.nl         */
+/*   Created: 2019/11/11 20:54:52 by dkrecisz      #+#    #+#                 */
+/*   Updated: 2021/03/29 19:17:30 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-# define ERROR 1
-# define NO_ERROR 0
-
-# include "libft/include/libft.h"
-
-typedef struct s_stack
+t_stack	*stack_new_node(int content)
 {
-	t_list	*a;
-	t_list	*b;
-}	t_stack;
+	t_stack	*new;
 
-int	read_argv(int ac, char *av[], t_stack *stack);
-
-#endif
+	new = (t_stack *)ft_calloc(1, sizeof(t_stack));
+	if (new == 0)
+		return (0);
+	new->content = content;
+	new->marked = 0;
+	new->next = 0;
+	new->prev = 0;
+	return (new);
+}

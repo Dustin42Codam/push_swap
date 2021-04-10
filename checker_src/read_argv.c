@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 19:34:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/24 21:17:02 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/31 14:45:16 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,12 @@ int	read_argv(int ac, char *av[], t_stack *stack, t_flags *flags)
 		return (ERROR);
 	flag_count = read_flags(av, &flags);
 	if (ac == 2 + flag_count)
-		return (read_single_arg(av[1 + flag_count], stack));
+	{
+		// return (read_single_arg(av[1 + flag_count], stack));
+		read_single_arg(av[1 + flag_count], stack);
+		printf("%d\n", stack->a->content);
+		return (0);
+	}
 	else
 		return (read_multiple_args(ac, av, stack, flag_count));
 }

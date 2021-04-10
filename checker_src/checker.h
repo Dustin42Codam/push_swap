@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/24 21:16:49 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/31 14:07:16 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define SLOMO 8
 
 # include "../libft/include/libft.h"
+# include <stdio.h>
 
 typedef struct s_flags
 {

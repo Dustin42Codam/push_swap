@@ -32,12 +32,25 @@ TODO:
 			- In any other case display "KO\n"
 	2. push_swap
 		2.1	Argument check
-			- Copy arg reading from checker.c
+			+ Copy arg reading from checker.c
 	3. Misc
 		-	ssize_t ft_putchar
 			-	protect each write
 		-	include CFLAGS in makefile compilation step
 		-	create tests (criterion?)
+		-	delete debug files/functions before submitting project
+		3.1	Sorting algorithms
+			Level 1:
+				+	Bubble Sort
+				+	Selection Sort - VERY FEW SWAPS!!!
+				+	Insertion Sort
+			Level 2:
+				-	Merge Sort
+				-	Quick Sort
+				-	Heap Sort
+			Level 3:
+				-	Tim Sort
+				-	
 	4. Bonus
 		+ Debug option -v that can display the stack’s status 
 			after each operation
@@ -52,6 +65,9 @@ In progress:
 	2.	push_swap
 		-	Test passing instructions to checker
 		-	create simple sorting algorithm
+			-	find min
+			-	push to stack b
+			-	iterate
 
 Done:
 	+ author file
@@ -104,4 +120,35 @@ pb					//
 KO
 $>./checker 3 2 one 0
 Error
+
+I:	Index
+V:	Value
+P:	Position (sorted)
+
+I	V	P
+1,	3,	2
+2,	5,	3
+3,	2,	1
+4,	10,	4
+
+Idea #2
+
+	1.	Create second stack "Y"
+	2.	Iterate through stack "X" that was passed as argument
+	3.	Copy min value node from stack X to stack Y
+	4.	Mark the copied node inside stack X as "copied" 
+	5.	Repeat until stack Y is a sorted version of stack X
+	6.	Iterate through stack Y
+	7.	Find node from stack Y within stack X
+	8.	Check if the found node is inside 1st or 2nd half of stack X
+	9.	Let the node on the top of stack X
+		-> ra or rra depending if node is wihtin upper or lower half, respectively
+	10. Push node on stack b
+	11. repeat until stack b is sorted and stack a is empty
+	12. push everything on stack a
+
+Idea #3
+	1.	Iterate through stack A
+	2.	Mark lowest value node as number 1, second lowest as 2, etc..
+	3.	Mark a marked node as already marked
 

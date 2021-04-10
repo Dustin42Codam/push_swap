@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/24 21:39:58 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/24 21:42:28 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/03/31 17:44:26 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	read_single_arg(char *arg, t_stack *stack)
 	return (NO_ERROR);
 }
 
-static int	read_multiple_args(int ac, char *av[], t_stack *stack)
+/* static int	read_multiple_args(int ac, char *av[], t_stack *stack)
 {
 	t_list	*node;
 	size_t	i;
@@ -78,13 +78,14 @@ static int	read_multiple_args(int ac, char *av[], t_stack *stack)
 	}
 	return (NO_ERROR);
 }
-
+ */
 int	read_argv(int ac, char *av[], t_stack *stack)
 {
 	if (stack == 0)
 		return (ERROR);
 	if (ac == 2)
 		return (read_single_arg(av[1], stack));
-	else
-		return (read_multiple_args(ac, av, stack));
+	// else
+	// 	return (read_multiple_args(ac, av, stack));
+	return (0);
 }
