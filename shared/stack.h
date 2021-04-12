@@ -6,14 +6,14 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/10 22:51:07 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 23:00:46 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/12 18:57:52 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
 
-# include "../libft/include/libft.h"
+# include "include/libft.h"
 
 typedef struct s_stack
 {

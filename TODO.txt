@@ -152,3 +152,5 @@ Idea #3
 	2.	Mark lowest value node as number 1, second lowest as 2, etc..
 	3.	Mark a marked node as already marked
 
+Idea #42
+	1.	get

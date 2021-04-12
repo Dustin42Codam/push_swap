@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 23:31:03 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/12 18:29:47 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,4 @@ int	main(int argc, char *argv[])
 		clean_up(stack, cmd.list, NO_ERROR);
 	}
 	return (0);
-}
+} 

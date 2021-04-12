@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/24 21:28:09 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 22:26:25 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/12 20:37:22 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,12 @@
 # define ERROR 1
 # define NO_ERROR 0
 
-# include "../libft/include/libft.h"
+# include "include/libft.h"
+# include "stack.h"
 
 // debug stuff delete later
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct	s_stack
-{
-	t_list	*a;
-	t_list	*b;
-}				t_stack;
 
 // debug stuff delete later
 void	print_stack(t_stack *stack);

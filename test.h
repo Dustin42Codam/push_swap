@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test.c                                             :+:    :+:            */
+/*   test.h                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/04/10 23:49:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/12 18:57:12 by dkrecisz      ########   odam.nl         */
+/*   Created: 2021/04/12 18:55:41 by dkrecisz      #+#    #+#                 */
+/*   Updated: 2021/04/12 18:57:06 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
-// #include "include/libft.h"
-#include <stdio.h>
+#ifndef TEST_H
+# define TEST_H
 
-void main()
-{
-	swap_b(0);
-	printf("Test\n");
-}
+# include "include/libft.h"
+
+#endif

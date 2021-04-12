@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 22:19:12 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/11 00:03:26 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/12 20:37:38 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	make bonus -C $(LIBFT)
 	make -C $(SHARED)
-	$(CC) $(OBJ) $(SHARED)/stack.a $(LIBFT)/libft.a -o $(NAME)
+	$(CC) -I $(LIBFT)  $(OBJ) $(SHARED)/stack.a \
+		$(LIBFT)/libft.a -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(LIBFT) -I $(SHARED) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 22:56:15 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/12 19:22:39 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # define READ_FILE 4
 # define SLOMO 8
 
-# include "../libft/include/libft.h"
-# include "../shared/stack.h"
+# include "include/libft.h"
+# include "stack.h"
 # include <stdio.h>
 
 typedef struct s_flags
