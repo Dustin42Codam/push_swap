@@ -6,13 +6,14 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 22:19:12 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/12 20:37:38 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/14 19:50:24 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = push_swap.c read_argv.c debug.c
+SRC = push_swap.c read_argv.c debug.c selection_sort.c sort.c \
+		sort_utils.c
 
 LIBFT = ../libft
 
@@ -21,7 +22,11 @@ SHARED = ../shared
 OBJ = $(SRC:%.c=%.o)
 
 ifndef CFLAGS
-	CFLAGS = -Wall -Wextra -Werror
+	CFLAGS = -Wall -Wextra
+endif
+
+ifndef CC
+	CC = clang
 endif
 
 .PHONY: clean fclean re

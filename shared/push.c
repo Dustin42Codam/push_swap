@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/14 01:17:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 23:02:53 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/14 20:18:13 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  *
  * **/
 
-void	push_a(t_stack *stack)
+void	push_a(t_stack *stack, char mode)
 {
 	t_list	*last_b;
 	t_list	*tmp;
@@ -45,9 +45,11 @@ void	push_a(t_stack *stack)
 		tmp->next = 0;
 		ft_lstadd_back(&stack->a, last_b);
 	}
+	if (mode == PRINT)
+		ft_putstr_fd("pa\n", 1);
 }
 
-void	push_b(t_stack *stack)
+void	push_b(t_stack *stack, char mode)
 {
 	t_list	*last_a;
 	t_list	*tmp;
@@ -71,4 +73,6 @@ void	push_b(t_stack *stack)
 		tmp->next = 0;
 		ft_lstadd_back(&stack->b, last_a);
 	}
+	if (mode == PRINT)
+		ft_putstr_fd("pb\n", 1);
 }

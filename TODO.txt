@@ -7,7 +7,7 @@ TODO:
 			+ check for invalid duplicates
 			+ Create parent function for read_arg_str() and read_args()
 			+ Parse 1st arg as a string of integers if only 1 arg
-			- malloc check stack
+			+ malloc check stack
 			- Norm check checker.c
 		1.3 Create stack
 			+ create two linked lists (populate stack a + empty stack b)
@@ -27,12 +27,19 @@ TODO:
 			+ display "Error\n" on stderr
 			+ free linked list
 		1.7	Evaluation
-			- IF stack A is sorted AND stack B is empty
-				- THEN display "OK\n"
-			- In any other case display "KO\n"
+			+ IF stack A is sorted AND stack B is empty
+				+ THEN display "OK\n"
+			+ In any other case display "KO\n"
 	2. push_swap
 		2.1	Argument check
+			+ Read multiple arguments as one string
+			+ Read multiple arguments as list of args
 			+ Copy arg reading from checker.c
+		2.2	Sort
+			+ 1 Value
+			+ 2 Values
+			- 3 Values
+			- 5 Values
 	3. Misc
 		-	ssize_t ft_putchar
 			-	protect each write
@@ -45,8 +52,8 @@ TODO:
 				+	Selection Sort - VERY FEW SWAPS!!!
 				+	Insertion Sort
 			Level 2:
-				-	Merge Sort
-				-	Quick Sort
+				+	Merge Sort
+				+	Quick Sort
 				-	Heap Sort
 			Level 3:
 				-	Tim Sort
@@ -58,6 +65,9 @@ TODO:
 			instruction after hitting enter.
 		- -h flag to print out usage
 		- delete unnecassary bonus flags?
+	5.	Test phase
+		- Write testscript for each case
+		- Check for "Error\n" on failed cases
 
 In progress:
 	1.	Checker
@@ -154,3 +164,14 @@ Idea #3
 
 Idea #42
 	1.	get
+
+Idea selection_sort:
+	1.	+ Find min value in stack_a
+	2.	+ Push min value from stack_a to stack_b
+	3.	+ Repeat 2. step until stack_a is empty
+	4.	+ Push every element from stack_b to stack_a
+
+
+0 0 1 1 2 2
+1 2 0 2 0 1
+2 1 2 0 1 0

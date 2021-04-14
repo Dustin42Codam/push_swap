@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/24 21:28:09 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/12 20:37:22 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/14 19:38:57 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@
 // debug stuff delete later
 void	print_stack(t_stack *stack);
 
-int	read_argv(int ac, char *av[], t_stack *stack);
+int		read_argv(int ac, char *av[], t_stack *stack);
+void	sort(t_stack *stack);
+int		selection_sort(t_stack *stack);
+void	push_min(t_stack *stack, t_list *min);
+t_list	*find_min(t_list *stack);
 
 t_stack			*stack_new_node(int content);
 void			stack_add_front(t_stack **bottom, t_stack *new);

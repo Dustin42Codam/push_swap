@@ -6,13 +6,13 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/14 07:12:46 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 23:03:00 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/14 20:13:51 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	rotate_a(t_stack *stack)
+void	rotate_a(t_stack *stack, char mode)
 {
 	t_list	*last;
 	t_list	*second_last;
@@ -37,9 +37,11 @@ void	rotate_a(t_stack *stack)
 		ft_lstadd_front(&stack->a, last);
 		second_last->next = 0;
 	}
+	if (mode == PRINT)
+		ft_putstr_fd("ra\n", 1);
 }
 
-void	rotate_b(t_stack *stack)
+void	rotate_b(t_stack *stack, char mode)
 {
 	t_list	*last;
 	t_list	*second_last;
@@ -64,10 +66,14 @@ void	rotate_b(t_stack *stack)
 		ft_lstadd_front(&stack->b, last);
 		second_last->next = 0;
 	}
+	if (mode == PRINT)
+		ft_putstr_fd("rb\n", 1);
 }
 
-void	rotate_a_b(t_stack *stack)
+void	rotate_a_b(t_stack *stack, char mode)
 {
-	rotate_a(stack);
-	rotate_b(stack);
+	rotate_a(stack, NO_PRINT);
+	rotate_b(stack, NO_PRINT);
+	if (mode == PRINT)
+		ft_putstr_fd("rr\n", 1);
 }

@@ -6,11 +6,11 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 22:16:28 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/12 19:19:13 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/15 00:50:39 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = push_swap checker
 
 LIBFT = ./libft
 SHARED = ./shared
@@ -23,13 +23,17 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
+$(word 1, $(NAME)):
+	make -C $(LIBFT) CC=$(CC) CFLAGS=$(CFLAGS)
+	make -C $(SHARED) CC=$(CC) CFLAGS=$(CFLAGS)
+	make -C $(PUSH_SWAP) CC=$(CC) CFLAGS=$(CFLAGS)
+	cp $(PUSH_SWAP)/$(word 1, $(NAME)) ./$(word 1, $(NAME))
+
+$(word 2, $(NAME)):
 	make -C $(LIBFT) CC=$(CC) CFLAGS=$(CFLAGS)
 	make -C $(SHARED) CC=$(CC) CFLAGS=$(CFLAGS)
 	make -C $(CHECKER) CC=$(CC) CFLAGS=$(CFLAGS)
-	cp $(CHECKER)/checker .
-	make -C $(PUSH_SWAP) CC=$(CC) CFLAGS=$(CFLAGS)
-	cp $(PUSH_SWAP)/push_swap ./$(NAME)
+	cp $(CHECKER)/$(word 2, $(NAME)) ./$(word 2, $(NAME))
 
 clean:
 	make clean -C $(LIBFT)
@@ -46,3 +50,7 @@ fclean: clean
 	rm -f checker
 
 re: fclean all
+
+f:
+	rm -f $(NAME)
+	make all

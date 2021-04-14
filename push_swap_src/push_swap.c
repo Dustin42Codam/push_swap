@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/17 15:49:13 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/02 18:15:45 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/15 00:49:25 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,11 @@ int	main(int argc, char *argv[])
 		enumerate_stack(stack);
 		while (pre_sort_stack(stack->a, id))
 			id++;
-		print_stack(stack);
+		// print_stack(stack);
+		// print_stack(stack);
+		// sort(stack);
+		// print_stack(stack);
+		selection_sort(stack);
 		clean_up(stack, NO_ERROR);
 	}
 	return (0);

@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test.c                                             :+:    :+:            */
+/*   selection_sort.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/04/10 23:49:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/12 18:57:12 by dkrecisz      ########   odam.nl         */
+/*   Created: 2021/04/13 18:40:27 by dkrecisz      #+#    #+#                 */
+/*   Updated: 2021/04/14 20:25:40 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "stack.h"
-// #include "include/libft.h"
-#include <stdio.h>
 
-void main()
+int	selection_sort(t_stack *stack)
 {
-	swap_b(0);
-	printf("Test\n");
+	t_list	*min;
+
+	while (ft_lstsize(stack->a))
+	{
+		min = find_min(stack->a);
+		push_min(stack, min);
+	}
+	while (ft_lstsize(stack->b))
+		push_a(stack, PRINT);
+	return (0);
 }

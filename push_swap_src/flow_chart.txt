@@ -19,6 +19,61 @@ while (stack_b is not empty || stack_a not sorted)
     else if (same distance to next min value in lower && in upper half?)
       rotate the lowest value of the two to the top of the stack;
   }
-  if (no value < median in stack_a)
+  if (no value lower than median in stack_a)
     break ;
+}
+
+push_swap;
+while (stack_b is not empty || stack_a not sorted)
+{
+
+	if (stack[bottom] < stack[top] && both > median)
+		ra;
+	else if (stack[bottom] < stack[top])
+		rra;
+	if (stack_a[top] > stack_a[top - 1]?)
+    	sa;
+	if (stack_a[top] < median?)
+	{
+		pb;
+		if (stack_b_len >= 2 && stack_b[top] < stack_b[top] - 1)
+		{
+			if (sa_len >= 2 && stack_a[top] > stack_a[top - 1])
+				ss;
+			if (stack_b[top] < stack_b[bottom])
+				rb;
+			else
+				sb;
+		}
+		continue ;
+	}
+	if (stack_b_len < median + 1)
+	{
+		min = get_next_min();
+		while (min)
+			rra/ra;
+		continue ;
+	}
+	else
+	{
+		if (stack_b is sorted from bottom to top ascend.)
+		{
+			if (stack_a is sorted from top to bottom ascend.)
+				while (stack_b_size)
+					pa;
+			else
+				sort_stack_a();
+		}
+		else
+		{
+			//sort_stack_b()
+			while (stack_b not sorted)
+			{
+				min = get_next_min();
+				while (min)
+					rra/ra;
+				pb;
+			}
+		}
+	}
 }

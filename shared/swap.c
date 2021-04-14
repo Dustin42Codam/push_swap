@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/13 07:37:09 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 23:03:05 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/14 20:15:01 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * 
  * **/
 
-void	swap_a(t_stack *stack)
+void	swap_a(t_stack *stack, char mode)
 {
 	t_list	*tmp;
 	int		len;
@@ -44,9 +44,11 @@ void	swap_a(t_stack *stack)
 		tmp->next = tmp->next->next;
 		tmp->next->next->next = 0;
 	}
+	if (mode == PRINT)
+		ft_putstr_fd("sa\n", 1);
 }
 
-void	swap_b(t_stack *stack)
+void	swap_b(t_stack *stack, char mode)
 {
 	t_list	*tmp;
 	int		len;
@@ -69,10 +71,14 @@ void	swap_b(t_stack *stack)
 		tmp->next = tmp->next->next;
 		tmp->next->next->next = 0;
 	}
+	if (mode == PRINT)
+		ft_putstr_fd("sb\n", 1);
 }
 
-void	swap_a_b(t_stack *stack)
+void	swap_a_b(t_stack *stack, char mode)
 {
-	swap_a(stack);
-	swap_b(stack);
+	swap_a(stack, NO_PRINT);
+	swap_b(stack, NO_PRINT);
+	if (mode == PRINT)
+		ft_putstr_fd("ss\n", 1);
 }
