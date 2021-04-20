@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:10:15 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/02 16:52:17 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/20 07:19:34 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 
 typedef struct s_list
 {
+	size_t			index;
+	size_t			sort_id;
+	size_t			group;
 	int				content;
-	unsigned int	index;
-	unsigned int	sort_id;
 	unsigned char	check;
 	struct s_list	*next;
 }				t_list;
@@ -95,7 +96,7 @@ int				ft_numlen(long n);
  * **/
 t_list			*ft_lstnew(int content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
-int				ft_lstsize(t_list *lst);
+size_t			ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(int));

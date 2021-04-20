@@ -6,38 +6,30 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/13 18:40:27 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/14 20:24:52 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/20 08:06:00 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stack.h"
 
-t_list	*find_min(t_list *stack)
+int	compare_top(t_list *stack)
 {
-	t_list	*min;
-	t_list	*tmp;
-
-	min = stack;
-	tmp = stack;
-	while (tmp)
-	{
-		if (min->content > tmp->content)
-			min = tmp;
-		tmp = tmp->next;
-	}
-	return (min);
+	return (top(stack)->content > get(stack, ft_lstsize(stack) - 2)->content);
 }
 
-void	push_min(t_stack *stack, t_list *min)
+void	enumerate_stack(t_list *stack)
 {
-	t_list	*top;
+	size_t	i;
+	t_list	*node;
 
-	top = ft_lstlast(stack->a);
-	while (top != min)
+	i = 0;
+	node = stack;
+	while (node)
 	{
-		rotate_a(stack, PRINT);
-		top = ft_lstlast(stack->a);
+		node->index = i;
+		node->check = 0;
+		node->group = 0;
+		node = node->next;
+		i++;
 	}
-	push_b(stack, PRINT);
 }

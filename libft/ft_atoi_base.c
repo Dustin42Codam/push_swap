@@ -6,11 +6,11 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/08 14:36:07 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/04 14:28:00 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/15 03:03:26 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 static int	nbr_inbase(char c, int base)
 {

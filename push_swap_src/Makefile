@@ -6,14 +6,14 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 22:19:12 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/14 19:50:24 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/20 09:46:35 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = push_swap.c read_argv.c debug.c selection_sort.c sort.c \
-		sort_utils.c
+SRC =	push_swap.c read_argv.c debug.c selection_sort.c sort.c \
+		init_stack_data.c sort_utils.c bonus.c
 
 LIBFT = ../libft
 
@@ -25,9 +25,7 @@ ifndef CFLAGS
 	CFLAGS = -Wall -Wextra
 endif
 
-ifndef CC
-	CC = clang
-endif
+CC = gcc
 
 .PHONY: clean fclean re
 

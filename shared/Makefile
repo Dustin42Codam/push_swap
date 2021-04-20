@@ -6,13 +6,14 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 23:45:26 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/12 19:19:01 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/17 20:19:36 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = stack.a
 
-SRC = push.c swap.c rotate.c reverse_rotate.c
+SRC =	push.c swap.c rotate.c reverse_rotate.c \
+		get.c top.c bottom.c min.c max.c
 
 OBJ = $(SRC:%.c=%.o)
 

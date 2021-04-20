@@ -6,12 +6,13 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 22:16:28 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/15 00:50:39 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/15 03:13:53 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap checker
 
+BONUS = ./bonus
 LIBFT = ./libft
 SHARED = ./shared
 CHECKER = ./checker_src

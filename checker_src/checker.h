@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/14 20:21:33 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/15 03:25:13 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define READ_FILE 4
 # define SLOMO 8
 
-# include "include/libft.h"
+# include "libft.h"
 # include "stack.h"
 # include <stdio.h>
 

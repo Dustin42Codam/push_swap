@@ -6,11 +6,11 @@
 /*   By: dkrecisz <dkrecisz@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/09 06:55:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/04 14:00:31 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/15 03:03:26 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 static int	get_len(unsigned int n, int base)
 {

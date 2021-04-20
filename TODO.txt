@@ -38,7 +38,7 @@ TODO:
 		2.2	Sort
 			+ 1 Value
 			+ 2 Values
-			- 3 Values
+			+ 3 Values
 			- 5 Values
 	3. Misc
 		-	ssize_t ft_putchar
@@ -73,19 +73,26 @@ In progress:
 	1.	Checker
 		-	norm check
 	2.	push_swap
-		-	Test passing instructions to checker
-		-	create simple sorting algorithm
-			-	find min
-			-	push to stack b
-			-	iterate
-
+		-	Write stack specific functions
+			-	index access 
+				-	t_list	*get(a||b, x)
+				-	out of bound check
+			+	max value node
+				-	t_list	*max(a||b)
+			+	min value node
+				-	t_list	*min(a||b)
+			-	total median
+				-	size_t	stack->median_total()
+			-	stack median
+				-	size_t	stack->median_stack(a||b)
+			-	sort check?
 Done:
 	+ author file
 	+ Makefile
 	+ Add Libft
 	1.2 Argument check
 	1.3 Create stacks
-
+pb, ra, pb, ra, sa, ra, pa, pa
 
 +++++++++++ NOTES ++++++++++++
 
@@ -141,37 +148,35 @@ I	V	P
 3,	2,	1
 4,	10,	4
 
-Idea #2
-
-	1.	Create second stack "Y"
-	2.	Iterate through stack "X" that was passed as argument
-	3.	Copy min value node from stack X to stack Y
-	4.	Mark the copied node inside stack X as "copied" 
-	5.	Repeat until stack Y is a sorted version of stack X
-	6.	Iterate through stack Y
-	7.	Find node from stack Y within stack X
-	8.	Check if the found node is inside 1st or 2nd half of stack X
-	9.	Let the node on the top of stack X
-		-> ra or rra depending if node is wihtin upper or lower half, respectively
-	10. Push node on stack b
-	11. repeat until stack b is sorted and stack a is empty
-	12. push everything on stack a
-
-Idea #3
-	1.	Iterate through stack A
-	2.	Mark lowest value node as number 1, second lowest as 2, etc..
-	3.	Mark a marked node as already marked
-
-Idea #42
-	1.	get
-
 Idea selection_sort:
 	1.	+ Find min value in stack_a
 	2.	+ Push min value from stack_a to stack_b
 	3.	+ Repeat 2. step until stack_a is empty
 	4.	+ Push every element from stack_b to stack_a
 
+Idea sort six:
 
-0 0 1 1 2 2
-1 2 0 2 0 1
-2 1 2 0 1 0
+-	push to stack_b sort_ids:
+-	find which is nearest
+	-	0, 1, 2
+	-	1, 2, 3
+	-	3, 4, 5
+	-	4, 5, 0
+	-	5, 0, 1
+
+	1.	if top_a < median ?
+		True - pb
+	2.	if stack_a[top] > stack_a[top - 1]
+		True - sa
+		False - 
+			if
+
+
+Hello David :wave:
+Sorry I totally forgot to mention that Aleksandrs also has to
+validate miniRT (in addition to exam rank 02) before he can start with minishell.
+I just would like to know if it is possible at all if he 
+can skip the exam as long he is in Latvia (and after he validated miniRT of course) so I can already set everything
+up (create git repo, split up the tasks, plan other things) or if
+I should do the project with another peer who is qualified for the project.
+I would totally accept it if 

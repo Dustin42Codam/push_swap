@@ -24,10 +24,10 @@ while (stack_b is not empty || stack_a not sorted)
 }
 
 push_swap;
-while (stack_b is not empty || stack_a not sorted)
+while (stack_b is not empty || stack_a not sorted || stack_b not sorted)
 {
 
-	if (stack[bottom] < stack[top] && both > median)
+	if (stack_a[bottom] < stack_a[top] && both > median)
 		ra;
 	else if (stack[bottom] < stack[top])
 		rra;
@@ -38,10 +38,10 @@ while (stack_b is not empty || stack_a not sorted)
 		pb;
 		if (stack_b_len >= 2 && stack_b[top] < stack_b[top] - 1)
 		{
-			if (sa_len >= 2 && stack_a[top] > stack_a[top - 1])
-				ss;
 			if (stack_b[top] < stack_b[bottom])
 				rb;
+			else if (sa_len >= 2 && stack_a[top] > stack_a[top - 1])
+				ss;
 			else
 				sb;
 		}
@@ -75,5 +75,45 @@ while (stack_b is not empty || stack_a not sorted)
 				pb;
 			}
 		}
+	}
+}
+
+Input test:
+2 3 5 12 10 6 9 7 4 1 8 11
+
+median_method(t_stack *stack, size_t median);
+{
+	while (stack_size(stack_a) > median)
+	{
+		if (stack_a[top] < median)
+			pb;
+		else
+		{
+			if (stack_a[bottom] < median)
+			{
+				rra;
+				pb;
+			}
+			else
+			{
+				while (stack_a[top] >= mid)
+					ra;
+			}
+		}
+	}
+}
+median_method(t_stack *stack, size_t median);
+{
+	while (stack_size(stack_a) > median)
+	{
+		if (stack_a[top] < median)
+			pb;
+		if (stack_a[bottom] < median)
+		{
+			rra;
+			continue
+		}
+		while (stack_a[top] >= median)
+			ra;
 	}
 }

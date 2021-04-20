@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/17 15:49:13 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/15 00:49:25 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/20 08:07:53 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,13 @@ static void	clean_up(t_stack *stack, int error)
 	}
 }
 
-static void	enumerate_stack(t_stack *stack)
+static void	set_values(t_list *node, unsigned int id, unsigned char check)
 {
-	unsigned int	i;
-	t_list			*node;
-
-	i = 0;
-	node = stack->a;
-	while (node)
-	{
-		node->index = i;
-		node->check = 0;
-		node = node->next;
-		i++;
-	}
+	node->sort_id = id;
+	node->check = check;
 }
 
-static void	set_values(t_list **node, unsigned int id, unsigned char check)
-{
-	(*node)->sort_id = id;
-	(*node)->check = check;
-}
-
-static int	pre_sort_stack(t_list *stack, unsigned int id)
+static int	pre_sort_stack_a(t_list *stack, unsigned int id)
 {
 	t_list	*tmp;
 	t_list	*min;
@@ -77,14 +61,14 @@ static int	pre_sort_stack(t_list *stack, unsigned int id)
 	}
 	min = tmp;
 	id++;
-	set_values(&min, id, 1);
+	set_values(min, id, 1);
 	while (tmp->next)
 	{
 		if (min->content > tmp->next->content && tmp->next->check == 0)
 		{
-			set_values(&min, 0, 0);
+			set_values(min, 0, 0);
 			min = tmp->next;
-			set_values(&tmp->next, id, 1);
+			set_values(tmp->next, id, 1);
 		}
 		tmp = tmp->next;
 	}
@@ -102,14 +86,17 @@ int	main(int argc, char *argv[])
 		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
 		if (read_argv(argc, argv, stack))
 			clean_up(stack, ERROR);
-		enumerate_stack(stack);
-		while (pre_sort_stack(stack->a, id))
+		enumerate_stack(stack->a);
+		while (pre_sort_stack_a(stack->a, id))
 			id++;
 		// print_stack(stack);
+		init_stack_data(stack);
+		// printf("%ld\n", stack->median);
+		
+		sort(stack);
 		// print_stack(stack);
-		// sort(stack);
-		// print_stack(stack);
-		selection_sort(stack);
+		// printf("%d\n", find_min(stack->a)->content);
+		// selection_sort(stack);
 		clean_up(stack, NO_ERROR);
 	}
 	return (0);
