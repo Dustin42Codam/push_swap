@@ -6,15 +6,15 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 20:57:21 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/03/24 21:15:52 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/22 00:23:07 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 #include "bonus.h"
 #include <stdio.h>
 
-static int	get_node(t_list *stack, int i)
+static t_list	*get_node(t_list *stack, int i)
 {
 	t_list	*tmp;
 
@@ -24,31 +24,38 @@ static int	get_node(t_list *stack, int i)
 		tmp = tmp->next;
 		i--;
 	}
-	return (tmp->content);
+	return (tmp);
 }
 
-void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count)
+void	print_stacks_ps(t_stack *stack)
 {
 	int		len_a;
 	int		len_b;
 	int		pos;
+	t_list	*node_a;
+	t_list	*node_b;
 
 	len_a = ft_lstsize(stack->a);
 	len_b = ft_lstsize(stack->b);
 	pos = len_a + len_b;
-	printf("------------------------------");
-	printf("\nInstruction #%d %s\n\n", count, cmd.list[count]);
+	printf("\n------------------------------\n");
+	// printf("\nInstruction #%d %s\n\n", count, cmd.list[count]);
 	while (pos)
 	{
+		// node_a = get_node(stack->a, pos - 1);
+		// node_b = get_node(stack->b, pos - 1);
 		if (pos > len_a && pos > len_b)
 			printf("%-28s\n", " ");
 		else if (pos <= len_a && pos > len_b)
-			printf("%-4s%10d%-14s\n", " ", get_node(stack->a, pos - 1), " ");
+			printf("%-4s%10d[%ld]{%ld}%-14s\n", " ", get_node(stack->a, pos - 1)->content, get_node(stack->a, pos - 1)->group, \
+													get_node(stack->a, pos - 1)->sort_id, " ");
 		else if (pos > len_a && pos <= len_b)
-			printf("%-18s%10d\n", " ", get_node(stack->b, pos - 1));
+			printf("%-18s%10d[%ld]{%ld}\n", " ", get_node(stack->b, pos - 1)->content, get_node(stack->b, pos - 1)->group, \
+											get_node(stack->b, pos - 1)->sort_id);
 		else
-			printf("%-4s%10d%-4s%10d\n", " ", get_node(stack->a, pos - 1), \
-										" ", get_node(stack->b, pos - 1));
+			printf("%-4s%10d[%ld]{%ld}%-4s%10d[%ld]{%ld}\n", " ", get_node(stack->a, pos - 1)->content, get_node(stack->a, pos - 1)->group, \
+										get_node(stack->a, pos - 1)->sort_id, " ", get_node(stack->b, pos - 1)->content, \
+										get_node(stack->b, pos - 1)->group, get_node(stack->b, pos - 1)->sort_id);
 		pos--;
 	}
 	printf("%-4s%10s%-4s%10s\n", " ", "Stack A", " ", "Stack B");

@@ -6,43 +6,17 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/29 19:59:19 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 22:10:22 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/22 19:08:48 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
-#include "libft/include/libft.h"
+#include "../libft/libft.h"
+#include "../shared/stack.h"
+#include "../push_swap_src/push_swap.h"
 
-void	print_stack(t_list *stack)
-{
-	t_list	*tmp;
 
-	tmp = stack;
-	while (tmp)
-	{
-		printf("%d.	%d	{%d.}	[%d]\n", tmp->index, tmp->content, \
-										tmp->sort_id, tmp->check);
-		tmp = tmp->next;
-	}
-}
-
-static void	enumerate_stack(t_list *stack)
-{
-	unsigned int	i;
-	t_list			*node;
-
-	i = 0;
-	node = stack;
-	while (node)
-	{
-		node->index = i;
-		node->check = 0;
-		node = node->next;
-		i++;
-	}
-}
 
 static unsigned int	get_sort_id(t_list *stack)
 {
@@ -97,23 +71,42 @@ static int	pre_sort_stack(t_list *stack, unsigned int id)
 void	main(void)
 {
 	unsigned int	id = 0;
-	t_list	*stack = ft_lstnew(-420);
-	t_list	*node1 = ft_lstnew(21);
-	t_list	*node2 = ft_lstnew(-7000);
+	t_stack			*stack;
+	stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
+
+	// t_list	*stack = ft_lstnew(-420);
+	t_list	*node1 = ft_lstnew(1);
+	t_list	*node2 = ft_lstnew(2);
 	t_list	*node3 = ft_lstnew(3);
-	t_list	*node4 = ft_lstnew(-133300);
-	t_list	*node5 = ft_lstnew(-419);
+	t_list	*node4 = ft_lstnew(4);
+	t_list	*node5 = ft_lstnew(5);
 
-	ft_lstadd_back(&stack, node1);
-	ft_lstadd_back(&stack, node2);
-	ft_lstadd_back(&stack, node3);
-	ft_lstadd_back(&stack, node5);
+	ft_lstadd_back(&stack->a, node5);
+	ft_lstadd_back(&stack->a, node4);
+	ft_lstadd_back(&stack->a, node3);
+	ft_lstadd_back(&stack->a, node2);
+	ft_lstadd_back(&stack->a, node1);
 
-	enumerate_stack(stack);
-
-	while (pre_sort_stack(stack, id) == 1)
+	while (pre_sort_stack(stack->a, id))
 		id++;
-	// while (pre_sort_stack(stack));
-	
-	print_stack(stack);
+
+	init_stack_data(stack);
+
+	stack->a->group = 1;
+	stack->a->next->group = 1;
+	stack->a->next->next->group = 1;
+
+
+	// push_b(stack, NO_PRINT);
+	// push_b(stack, NO_PRINT);
+// 
+	// swap_b(stack, NO_PRINT);
+	// swap_a(stack, NO_PRINT);
+
+	// printf("%ld\n", stack->b->sort_id);
+	// printf("%ld\n", stack->b->next->sort_id);
+
+	// printf("%d\n", compare_top_sort_id_a(stack));
+	printf("%d\n", compare_top_sort_id_b(stack));
+
 }

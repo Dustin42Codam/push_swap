@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/11 22:06:07 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/15 03:03:26 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/21 15:07:41 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_lstsize(t_list *lst)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (lst)

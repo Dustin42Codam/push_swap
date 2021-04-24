@@ -6,49 +6,13 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/14 00:21:11 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/20 10:40:41 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/24 19:31:04 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// static int	check_sort(t_stack *stack, char type)
-static int	check_sort(t_list *stack)
-{
-	t_list	*tmp;
-
-	tmp = stack;
-	while (tmp->next)
-	{
-		if (tmp->content < tmp->next->content)
-			return (1);
-		tmp = tmp->next;
-	}
-
-/* 	if (type == 'A')
-	{
-		tmp = stack->a;
-		while (tmp->next)
-		{
-			if (tmp->content < tmp->next->content)
-				return (1);
-			tmp = tmp->next;
-		}
-	}
-	else if (type == 'B')
-	{
-		tmp = stack->b;
-		while (tmp->next)
-		{
-			if (tmp->content > tmp->next->content)
-				return (1);
-			tmp = tmp->next;
-		}
-	} */
-	return (0);
-}
-
-static void	sort_three(t_stack *stack, t_list *stack_type)
+void	sort_three(t_stack *stack, t_list *stack_type)
 {
 	if (stack_type == stack->a)
 	{
@@ -165,7 +129,7 @@ void	sort(t_stack *stack)
 		return ;
 	else if (stack->size_a == 2)
 	{
-		if (top(stack->a) > bottom(stack->a))
+		if (top(stack->a)->content > bottom(stack->a)->content)
 			return (ft_putstr_fd("sa\n", 1));
 	}
 	else if (stack->size_a == 3)
@@ -174,8 +138,14 @@ void	sort(t_stack *stack)
 		sort_small_input(stack);
 	else if (stack->size_a >= 100 && stack->size_a < 500)
 		sort_medium_input(stack); */
-	else if (stack->size_a >= 10 && stack->size_a < 500)
-		median_method(stack, get_median(stack, stack->a, 0));
+	else if (stack->size_a >= 10)
+	{
+		stack->group_id = 1;
+		median_method(stack, 0, 0);
+	}
+		// sort_large(stack);
+		// median_method(stack, get_median(stack, stack->a, 0), 0);
+		// middle(stack, 1, ft_lstsize(stack->a));
 	// printf("median:\t%ld\n", get_median(stack, stack->a, 0));
 	// else
 		// sort_ten(stack);

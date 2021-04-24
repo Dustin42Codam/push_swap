@@ -73,19 +73,11 @@ In progress:
 	1.	Checker
 		-	norm check
 	2.	push_swap
-		-	Write stack specific functions
-			-	index access 
-				-	t_list	*get(a||b, x)
-				-	out of bound check
-			+	max value node
-				-	t_list	*max(a||b)
-			+	min value node
-				-	t_list	*min(a||b)
-			-	total median
-				-	size_t	stack->median_total()
-			-	stack median
-				-	size_t	stack->median_stack(a||b)
-			-	sort check?
+		-	Median method
+			-	chonk_b
+				-	2 ifs
+				-	push group to a
+			-	chonk_a
 Done:
 	+ author file
 	+ Makefile
@@ -170,13 +162,3 @@ Idea sort six:
 		True - sa
 		False - 
 			if
-
-
-Hello David :wave:
-Sorry I totally forgot to mention that Aleksandrs also has to
-validate miniRT (in addition to exam rank 02) before he can start with minishell.
-I just would like to know if it is possible at all if he 
-can skip the exam as long he is in Latvia (and after he validated miniRT of course) so I can already set everything
-up (create git repo, split up the tasks, plan other things) or if
-I should do the project with another peer who is qualified for the project.
-I would totally accept it if 

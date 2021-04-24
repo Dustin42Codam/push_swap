@@ -117,3 +117,50 @@ median_method(t_stack *stack, size_t median);
 			ra;
 	}
 }
+
+chonk_a;
+{
+	if (chonk_size_b == 2)
+		check_swap();
+	if (chonk_size_a == 2)
+		check_swap()
+	while (chonk_a && chonk_b sorted)
+		send_chonk_to_a(); return;
+	if (chonk group == 1)
+		special_function();
+	send_lower_half_to_b
+	{
+		*chonk check_swap chonk*	// check swap later
+		if rra
+			while rra
+				check push_b		// later check with sid
+				check swap_a		// later check with sid
+		chonk_b();
+	}
+	chonk_a();
+}
+
+chonk_b;
+{
+	if (chonk_size_b == 2)
+		check_swap(); (return;???)
+	if (chonk_size_a == 2)
+		check_swap();
+	while (chonk_a && chonk_b sorted)
+		send_chonk_to_a()
+	send_upper_half_to_a
+	{
+		*chonk check swap chonk*	// check_swap later
+		if rrb 
+			while rrb
+				check push_a*		// later check with sid
+				check swap_b*		// later check with sid
+		chonk_a();
+	}
+	chonk_b();
+}
+
+special_function;
+{
+
+}

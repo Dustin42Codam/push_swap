@@ -6,14 +6,15 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 22:19:12 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/20 09:46:35 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/23 03:56:55 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC =	push_swap.c read_argv.c debug.c selection_sort.c sort.c \
-		init_stack_data.c sort_utils.c bonus.c
+		init_stack_data.c sort_utils.c bonus.c median_method.c \
+		check_sort.c chonk.c
 
 LIBFT = ../libft
 

@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 07:33:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/15 03:24:17 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/20 10:50:06 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ typedef struct	s_print
 	size_t	padding;
 }				t_print;
 
-void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count);
+void	print_stacks_ps(t_stack *stack);
 void	press_enter_bonus(void);
 
 #endif

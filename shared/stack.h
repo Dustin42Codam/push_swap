@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/10 22:51:07 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/20 07:20:33 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/23 06:27:26 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ typedef struct s_stack
 {
 	t_list	*a;
 	t_list	*b;
+	t_list	*abs_max;
+	t_list	*abs_min;
 	size_t	median;
 	size_t	size_a;
 	size_t	size_b;
+	size_t	group_id;
+	size_t	regroup;
 /* 	
 	size_t	median_a;
 	size_t	median_b;
