@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 07:33:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/15 03:24:17 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 06:16:18 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,13 @@
 # define READ_FILE 4
 # define SLOMO 8
 
-typedef struct	s_print
+typedef struct s_print
 {
 	size_t	padding;
 }				t_print;
 
 void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count);
-void	press_enter_bonus(void);
+void	print_stacks_color_bonus(t_stack *stack, t_cmd cmd, int count);
+void	slow_motion_bonus(void);
 
 #endif

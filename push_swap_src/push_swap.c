@@ -6,14 +6,14 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/17 15:49:13 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/24 19:35:52 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 02:49:41 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-static void	free_nodes(t_list *node)
+void	free_nodes(t_list *node)
 {
 	t_list	*tmp;
 
@@ -26,7 +26,7 @@ static void	free_nodes(t_list *node)
 	node = NULL;
 }
 
-static void	clean_up(t_stack *stack, int error)
+void	clean_up(t_stack *stack, int error)
 {
 	if (stack)
 	{
@@ -89,14 +89,7 @@ int	main(int argc, char *argv[])
 		enumerate_stack(stack->a);
 		while (pre_sort_stack_a(stack->a, id))
 			id++;
-		// print_stack(stack);
-		init_stack_data(stack);
-		// printf("%ld\n", stack->median);
-		
 		sort(stack);
-		// print_stack(stack);
-		// printf("%d\n", find_min(stack->a)->content);
-		// selection_sort(stack);
 		clean_up(stack, NO_ERROR);
 	}
 	return (0);

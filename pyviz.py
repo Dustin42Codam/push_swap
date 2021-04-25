@@ -27,6 +27,7 @@ You can decrease or increase the speed with the matching buttons.
 
 
 RELATIVE_PATH = r'push_swap'
+# RELATIVE_PATH = r'push_swap_selection_sort'
 
 
 class PsGui:

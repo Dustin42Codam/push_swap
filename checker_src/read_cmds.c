@@ -24,30 +24,55 @@ int	count_cmds(char **list)
 	return (i);
 }
 
+static char	**init_cmd_list(int *i)
+{
+	char	**s;
+
+	s = (char **)ft_calloc(12, sizeof(char *));
+	if (!s)
+		return (0);
+	s[0] = "sa";
+	s[1] = "sb";
+	s[2] = "ss";
+	s[3] = "pa";
+	s[4] = "pb";
+	s[5] = "ra";
+	s[6] = "rb";
+	s[7] = "rr";
+	s[8] = "rra";
+	s[9] = "rrb";
+	s[10] = "rrr";
+	s[11] = 0;
+	(*i) = 0;
+	return (s);
+}
+
 int	validate_cmds(t_cmd *cmd)
 {
-	const char	*pool[] = {"sa", "sb", "ss", "pa", "pb", "ra", "rb", "rr", \
-							"rra", "rrb", "rrr", 0};
-	int	i;
-	int	j;
+	char	**list;
+	int		i;
+	int		j;
 
-	i = 0;
+	list = init_cmd_list(&i);
+	if (!list)
+		return (1);
 	while (cmd->list[i])
 	{
 		j = 0;
-		while (pool[j])
+		while (list[j])
 		{
-			if (!ft_strncmp(cmd->list[i], pool[j], ft_strlen(cmd->list[i])))
+			if (!ft_strncmp(cmd->list[i], list[j], ft_strlen(cmd->list[i])))
 			{
 				cmd->id[i] = j;
 				break ;
 			}
 			j++;
 		}
-		if (!pool[j])
+		if (!list[j])
 			return (1);
 		i++;
 	}
+	free(list);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/15 03:25:13 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 06:48:25 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@
 
 # define COLORS 1
 # define DEBUG 2
-# define READ_FILE 4
-# define SLOMO 8
+# define SLOMO 4
 
 # include "libft.h"
 # include "stack.h"
-# include <stdio.h>
 
 typedef struct s_flags
 {

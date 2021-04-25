@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/10 22:51:07 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/23 06:27:26 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 04:06:57 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,9 @@ typedef struct s_stack
 	t_list	*b;
 	t_list	*abs_max;
 	t_list	*abs_min;
-	size_t	median;
-	size_t	size_a;
-	size_t	size_b;
+	size_t	half;
 	size_t	group_id;
 	size_t	regroup;
-/* 	
-	size_t	median_a;
-	size_t	median_b;
-	size_t	min;
-	size_t	min_a;
-	size_t	min_b;
-	size_t	max;
-	size_t	max_a;
-	size_t	max_b;
-	size_t	op; */
-	// t_list	(*get)(t_list *stack, size_t index);
-	// void	(*print)(void);
 }	t_stack;
 
 void	swap_a(t_stack *stack, char mode);
@@ -59,12 +45,7 @@ void	reverse_rotate_a_b(t_stack *stack, char mode);
 t_list	*get(t_list *stack, size_t index);
 t_list	*top(t_list *stack);
 t_list	*bottom(t_list *stack);
-
 t_list	*min(t_list *stack);
 t_list	*max(t_list *stack);
-
-int		isupper_half(t_list *stack);
-t_list	*get_next_min(t_list *stack);
-// void	print(void);
 
 #endif

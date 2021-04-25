@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 19:34:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/10 23:32:14 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 06:48:39 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ static int	read_flags(char *av[], t_flags **flags)
 			(*flags)->bitfield |= COLORS;
 		else if (ft_strncmp("-v", av[i], 3) == 0)
 			(*flags)->bitfield |= DEBUG;
-		else if (ft_strncmp("-f", av[i], 3) == 0)
-			(*flags)->bitfield |= READ_FILE;
 		else if (ft_strncmp("-s", av[i], 3) == 0)
 			(*flags)->bitfield |= SLOMO;
 		else

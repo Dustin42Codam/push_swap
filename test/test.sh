@@ -11,17 +11,25 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-make -C $DIR
+make -C $DIR &>/dev/null
 cp $DIR/push_swap $DIR/test
 cp $DIR/checker $DIR/test
 
 while read line
 do
-	# echo $line
 	./push_swap $line | ./checker $line &>/dev/null
-	RET=$(./push_swap $line | wc -l)
-	if [ $RET -gt 12 ]; then
-		echo "$line [$RET] [KO]"
+	if [ $? -eq 1 ]; then
+		echo "$line [$RET] [Error]"
+		exit
 	fi
-	# echo
+
+	./push_swap $line | ./checker $line | grep KO
+	KO=$?
+	RET=$(./push_swap $line | wc -l)
+	if [ $KO -eq 0 ]; then
+		echo "$line [$RET] [KO]"
+		exit
+	else
+		echo "$line [$RET] [OK]"
+	fi
 done < $1
