@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 06:48:25 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 19:44:41 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define COLORS 1
 # define DEBUG 2
 # define SLOMO 4
+# define HELP 8
 
 # include "libft.h"
 # include "stack.h"
@@ -50,5 +51,7 @@ int		validate_cmds(t_cmd *cmd);
 void	execute_cmds(t_stack *stack, t_cmd cmd, t_flags flags);
 int		count_cmds(char **list);
 void	evaluate_stack(t_stack *stack);
+void	clean_up(t_stack *stack, char **cmds, int error);
+void	free_nodes(t_list *node);
 
 #endif

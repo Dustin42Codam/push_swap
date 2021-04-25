@@ -71,6 +71,14 @@ TODO:
 
 In progress:
 	- -h flag to print out usage
+		-	Add flag while parsing
+		-	Print Help
+			-	usage
+			-	Testing commands
+				-	3 inputs
+				-	5 inputs
+				-	100 inputs
+				-	500	inputs
 	-	re-read TODO
 	-	finish animation
 	-	push_next_median from a to b

@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 07:33:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 19:19:58 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 20:00:18 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,11 @@
 /** Reset **/
 # define RESET "\e[0m"
 
-typedef struct s_print
-{
-	size_t	padding;
-}				t_print;
+# include "checker.h"
 
 void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count);
 void	print_stacks_color_bonus(t_stack *stack, t_cmd cmd, int count);
+void	print_help_bonus(void);
 void	slow_motion_bonus(void);
 
 #endif

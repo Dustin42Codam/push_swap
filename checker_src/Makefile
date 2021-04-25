@@ -6,14 +6,15 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 23:12:08 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/24 22:39:02 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/25 19:58:19 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
 
-SRC =	checker.c bonus.c read_cmds.c read_argv.c \
-		execute_cmds.c evaluate_stack.c
+SRC =	checker.c read_cmds.c read_argv.c \
+		execute_cmds.c evaluate_stack.c \
+		bonus.c print_help_bonus.c
 
 LIBFT = ../libft
 

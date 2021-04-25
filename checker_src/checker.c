@@ -6,14 +6,14 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 06:43:32 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 19:44:25 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include <stdlib.h>
 
-static void	free_nodes(t_list *node)
+void	free_nodes(t_list *node)
 {
 	t_list	*tmp;
 
@@ -26,7 +26,7 @@ static void	free_nodes(t_list *node)
 	node = NULL;
 }
 
-static void	clean_up(t_stack *stack, char **cmds, int error)
+void	clean_up(t_stack *stack, char **cmds, int error)
 {
 	int	i;
 

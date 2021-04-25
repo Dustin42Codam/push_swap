@@ -6,11 +6,13 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 19:34:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 06:48:39 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 20:02:52 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include "bonus.h"
+#include <stdlib.h>
 
 static int	check_dup(t_list *list, t_list *node, int nb)
 {
@@ -93,6 +95,8 @@ static int	read_flags(char *av[], t_flags **flags)
 			(*flags)->bitfield |= DEBUG;
 		else if (ft_strncmp("-s", av[i], 3) == 0)
 			(*flags)->bitfield |= SLOMO;
+		else if (ft_strncmp("-h", av[i], 3) == 0)
+			(*flags)->bitfield |= HELP;
 		else
 			return (i - 1);
 		i++;
@@ -107,6 +111,12 @@ int	read_argv(int ac, char *av[], t_stack *stack, t_flags *flags)
 	if (stack == 0)
 		return (ERROR);
 	flag_count = read_flags(av, &flags);
+	if (flags->bitfield & HELP)
+	{
+		print_help_bonus();
+		clean_up(stack, 0, NO_ERROR);
+		exit(0);
+	}
 	if (ac == 2 + flag_count)
 		return (read_single_arg(av[1 + flag_count], stack));
 	else
