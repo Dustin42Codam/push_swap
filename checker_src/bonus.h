@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 07:33:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 06:16:18 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 19:19:58 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,6 @@
 
 /** Reset **/
 # define RESET "\e[0m"
-
-# define COLORS 1
-# define DEBUG 2
-# define READ_FILE 4
-# define SLOMO 8
 
 typedef struct s_print
 {
