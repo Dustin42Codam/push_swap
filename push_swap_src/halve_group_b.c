@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/25 03:37:15 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 05:00:49 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/25 22:07:14 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ void	halve_group_b(t_stack *stack)
 		}
 		halve_group_a(stack);
 	}
-	halve_group_b(stack);
+	if (check_sort_a(stack) || ft_lstsize(stack->b))
+		halve_group_b(stack);
 }
