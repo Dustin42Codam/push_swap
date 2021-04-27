@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/26 00:57:15 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 14:31:59 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_cmd
 	int			*id;
 	int			count;
 	char		**list;
+	char		**pool;
 }	t_cmd;
 
 typedef void	t_function(t_stack *stack, char mode);

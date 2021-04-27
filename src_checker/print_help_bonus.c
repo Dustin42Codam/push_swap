@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/25 19:31:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 11:34:49 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 14:19:11 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	print_notes(void)
 			BHWHT, RESET, ruby, cmd2);
 	printf("%s\n\n2. Run with random values AND count instructions [ruby]:\
 			%s\n$> %s%s && ./push_swap $ARG | wc -l\n", \
-			BHWHT, RESET, shuf, cmd2);
+			BHWHT, RESET, ruby, cmd2);
 	printf("%s\n\n3. Run push_swap with random values [shuf]:%s\n$> %s%s\n", \
 			BHWHT, RESET, shuf, cmd2);
 	printf("%s\n\n4. push_swap visualizer [requires python3]:%s\n$> %s\n", \

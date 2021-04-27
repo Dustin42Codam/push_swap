@@ -1,6 +1,6 @@
 
 SRC_CHK = checker.c init_cmds.c read_cmds.c read_argv.c \
-		execute_cmds.c evaluate_stack.c \
+		execute_cmds.c evaluate_stack.c validate_cmds.c \
 		bonus.c print_help_bonus.c
 	  
 SRC_PS = push_swap.c read_argv.c init_stack_data.c \
@@ -37,7 +37,6 @@ NAME_CHK = checker
 NAME_PS = push_swap
 
 .PHONY: all clean fclean re
-.SUFFIXES: .c .o
 
 all: $(NAME_CHK) $(NAME_PS)
 
