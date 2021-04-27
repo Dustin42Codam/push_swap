@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 07:33:17 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 15:47:21 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 18:08:33 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@
 
 # include "checker.h"
 
+void	print_stackbody(t_stack *stack, size_t pos, int init);
 void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count);
 void	print_stacks_color_bonus(t_stack *stack, t_cmd cmd, int count);
 void	print_help_bonus(void);

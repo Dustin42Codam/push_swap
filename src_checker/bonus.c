@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 20:57:21 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 15:56:14 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 18:09:14 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "bonus.h"
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 static int	get_node(t_list *stack, size_t i)
 {
@@ -28,7 +29,7 @@ static int	get_node(t_list *stack, size_t i)
 	return (tmp->content);
 }
 
-static void	print_stacks(t_stack *stack, size_t pos)
+void	print_stackbody(t_stack *stack, size_t pos, int init)
 {
 	while (pos)
 	{
@@ -46,6 +47,8 @@ static void	print_stacks(t_stack *stack, size_t pos)
 			" ", BHWHT, get_node(stack->b, pos - 1), RESET);
 		pos--;
 	}
+	if (init)
+		printf("\n%-4s%10s%-4s%10s\n", " ", "Stack A", " ", "Stack B");
 }
 
 void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count)
@@ -54,9 +57,9 @@ void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count)
 
 	pos = ft_lstsize(stack->a) + ft_lstsize(stack->b);
 	printf("------------------------------");
-	printf("\nInstruction %d %s\n\n", count, cmd.list[count]);
-	print_stacks(stack, pos);
-	printf("%-4s%10s%-4s%10s\n", " ", "Stack A", " ", "Stack B");
+	printf("\nInstruction %d/%d\t%s\n", count + 1, cmd.count, cmd.list[count]);
+	print_stackbody(stack, pos, 0);
+	printf("\n%-4s%10s%-4s%10s\n", " ", "Stack A", " ", "Stack B");
 }
 
 void	print_stacks_color_bonus(t_stack *stack, t_cmd cmd, int count)
@@ -65,18 +68,17 @@ void	print_stacks_color_bonus(t_stack *stack, t_cmd cmd, int count)
 
 	pos = ft_lstsize(stack->a) + ft_lstsize(stack->b);
 	printf("------------------------------");
-	printf("\nInstruction %d %s\n\n", count, cmd.list[count]);
-	print_stacks(stack, pos);
-	printf("%-4s%s%10s%s%-4s%10s%s\n", " ", BHRED, "Stack A", \
+	printf("\nInstruction %d/%d\t%s\n", count + 1, cmd.count, cmd.list[count]);
+	print_stackbody(stack, pos, 0);
+	printf("\n%-4s%s%10s%s%-4s%10s%s\n", " ", BHRED, "Stack A", \
 	BHBLU, " ", "Stack B", RESET);
 }
 
 void	hit_enter_bonus(void)
 {
-	char	enter;
+	char	c;
 
-	enter = 0;
-	printf("Press enter to continue\n");
-	while (enter != '\r' && enter != '\n')
-		enter = getchar();
+	c = 0;
+	printf("Press any key to continue...\n");
+	read(1, &c, 1);
 }

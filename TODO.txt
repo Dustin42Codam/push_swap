@@ -63,7 +63,7 @@ TODO:
 		+ Debug option -v that can display the stack’s status 
 			after each operation
 		+ Slow motion option that enables to execute the next
-			instruction after hitting enter.
+			instruction after hitting ENTER.
 		- delete unnecassary bonus flags?
 	5.	Test phase
 		- Write testscript for each case
@@ -71,9 +71,8 @@ TODO:
 
 In progress:
 	+	add -e flag to help page
-	-	add -e flag to code
-	-	add command to help page
-		-	how to use -s and -e
+	+	add -e flag to code
+	-	display print process x/n
 	-	allow only 1 option
 
 +++++++++++ NOTES ++++++++++++
