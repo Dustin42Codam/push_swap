@@ -29,7 +29,7 @@ OBJS_PS = $(addprefix $(OBJDIR_PS)/, $(OBJ_PS))
 LIBS = -L $(LIBDIR) -lft -L $(SHAREDIR) -lstack
 HEADER = -I includes -I $(LIBDIR) -I $(SHAREDIR)
 
-CC = gcc
+CC = clang
 CFLAGS = -c -Wall -Wextra -Werror
 
 NAME = checker push_swap
@@ -50,7 +50,7 @@ $(word 1, $(NAME)): $(OBJS_CHK)
 
 $(OBJS_CHK): $(OBJDIR_CHK)/%.o: $(SRCDIR_CHK)/%.c
 	@mkdir -p $(OBJDIR_CHK)
-	@$(CC) $(CFLAGS) $(HEADER) $(LIBS) $< -o $@
+	@$(CC) $(CFLAGS) $(HEADER) $< -o $@
 
 # Compiling push_swap
 $(word 2, $(NAME)): $(OBJS_PS)
