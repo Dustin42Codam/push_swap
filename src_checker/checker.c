@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/07 16:47:38 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 19:44:25 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 10:56:32 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,26 +53,13 @@ void	clean_up(t_stack *stack, char **cmds, int error)
 	}
 }
 
-static void	init_cmd(t_cmd *cmd, t_stack *stack)
-{
-	cmd->id = 0;
-	cmd->count = 0;
-	cmd->list = read_cmds();
-	if (!cmd->list)
-		clean_up(stack, 0, ERROR);
-	cmd->count = count_cmds(cmd->list);
-	cmd->id = (int *)ft_calloc(cmd->count + 1, sizeof(int));
-	if (!cmd->id)
-		clean_up(stack, cmd->list, ERROR);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_cmd		cmd;
 	t_flags		flags;
 	t_stack		*stack;
 
-	if (argc > 1)
+	if (argc > 1 && argv[1][0])
 	{
 		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
 		if (read_argv(argc, argv, stack, &flags))

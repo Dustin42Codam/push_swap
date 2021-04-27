@@ -12,7 +12,7 @@ fi
 INPUT="$2"
 while IFS= read -r LINE
 do
-	$1 $LINE &> /dev/null
+	$1 $LINE
 	RET=$?
 	if [ $RET -ne 1 ]; then
 		echo "Fail on input: $LINE"

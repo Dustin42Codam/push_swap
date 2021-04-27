@@ -14,16 +14,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	count_cmds(char **list)
-{
-	int	i;
-
-	i = 0;
-	while (list[i])
-		i++;
-	return (i);
-}
-
 static char	**init_cmd_list(int *i)
 {
 	char	**s;
@@ -86,34 +76,50 @@ static char	*ft_charjoin(char *input, char const c)
 	len = ft_strlen(input) + 1;
 	str = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!str)
+	{
+		free(input);
 		return (0);
+	}
 	ft_strlcpy(str, input, len);
 	str[len - 1] = c;
 	free(input);
 	return (str);
 }
 
-char	**read_cmds(void)
+void	check_read_ret(t_stack *stack, ssize_t ret, char *input)
+{
+	if (ret == -1)
+	{
+		free(input);
+		clean_up(stack, 0, ERROR);
+	}
+}
+
+char	**read_cmds(t_stack *stack)
 {
 	char	**cmds;
 	char	*input;
 	char	buf;
-	int		ret;
+	ssize_t	ret;
 
 	ret = 1;
 	input = ft_calloc(1, 1);
 	while (input && ret > 0)
 	{
 		ret = read(0, &buf, 1);
-		if (ret == -1)
+		check_read_ret(stack, ret, input);
+		if (ret == 0 && ft_strlen(input) == 0)
+		{
+			free(input);
 			return (0);
+		}
 		input = ft_charjoin(input, buf);
 		if (!input)
-			return (0);
+			clean_up(stack, 0, ERROR);
 	}
 	cmds = ft_split(input, '\n');
 	free(input);
 	if (!cmds)
-		return (0);
+		clean_up(stack, 0, ERROR);
 	return (cmds);
 }

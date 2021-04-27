@@ -6,11 +6,11 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/04/10 23:45:26 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/17 20:19:36 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/25 23:49:21 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = stack.a
+NAME = libstack.a
 
 SRC =	push.c swap.c rotate.c reverse_rotate.c \
 		get.c top.c bottom.c min.c max.c
@@ -19,9 +19,9 @@ OBJ = $(SRC:%.c=%.o)
 
 LIBFT = ../libft
 
-ifndef CFLAGS
-	CFLAGS = -Wall -Wextra -Werror
-endif
+CFLAGS = -Wall -Wextra -Werror
+
+CC = clang
 
 .PHONY: clean fclean re
 
@@ -30,7 +30,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
+$(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) -I $(LIBFT) -c $< -o $@
 
 clean:

@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.n>          +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/11/15 19:33:12 by dkrecisz      #+#    #+#                  #
-#    Updated: 2021/04/10 23:13:53 by dkrecisz      ########   odam.nl          #
+#    Updated: 2021/04/25 22:13:21 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,9 @@ ODIR = ./obj
 OBJ = $(SRC:%.c=$(ODIR)/%.o)
 BOBJ = $(BSRC:%.c=$(ODIR)/%.o)
 
-ifndef CFLAGS
-	CFLAGS = -Wall -Wextra -Werror
-endif
+CFLAGS = -Wall -Wextra -Werror
+
+CC = clang
 
 .PHONY: all clean fclean re bonus
 

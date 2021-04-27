@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 19:44:41 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/26 00:57:15 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ typedef struct s_jump
 }	t_jump;
 
 int		read_argv(int ac, char *av[], t_stack *stack, t_flags *flags);
-char	**read_cmds(void);
+char	**read_cmds(t_stack *stack);
 int		validate_cmds(t_cmd *cmd);
 void	execute_cmds(t_stack *stack, t_cmd cmd, t_flags flags);
-int		count_cmds(char **list);
 void	evaluate_stack(t_stack *stack);
 void	clean_up(t_stack *stack, char **cmds, int error);
 void	free_nodes(t_list *node);
+void	init_cmd(t_cmd *cmd, t_stack *stack);
 
 #endif

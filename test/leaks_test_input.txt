@@ -1,0 +1,39 @@
+valgrind --leak-check=full --track-origins=yes ./push_swap
+valgrind --leak-check=full --track-origins=yes ./push_swap "1 2"
+valgrind --leak-check=full --track-origins=yes ./push_swap "2 2"
+valgrind --leak-check=full --track-origins=yes ./push_swap "a 2"
+valgrind --leak-check=full --track-origins=yes ./push_swap "2147483649"
+valgrind --leak-check=full --track-origins=yes ./push_swap ""
+valgrind --leak-check=full --track-origins=yes ./push_swap "1"
+valgrind --leak-check=full --track-origins=yes ./push_swap "1" "2"
+valgrind --leak-check=full --track-origins=yes ./push_swap "1" "2 2"
+valgrind --leak-check=full --track-origins=yes ./push_swap "1" "2-2"
+valgrind --leak-check=full --track-origins=yes ./push_swap "1						1"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker 1 2
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker "2 2"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker "a 2"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker "2147483649"
+valgrind --leak-check=full --track-origins=yes ./checker ""
+valgrind --leak-check=full --track-origins=yes ./checker "1"
+valgrind --leak-check=full --track-origins=yes ./checker "1" "2"
+valgrind --leak-check=full --track-origins=yes ./checker "1" "2 2"
+valgrind --leak-check=full --track-origins=yes ./checker "1" "2-2"
+valgrind --leak-check=full --track-origins=yes ./checker "1						1"
+echo "sa " | valgrind --leak-check=full --track-origins=yes ./checker "1 2"
+echo "  sa" | valgrind --leak-check=full --track-origins=yes ./checker "1 2"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -p -h
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v ""
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v -h ""
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v "1 2"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v "1 2s"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v -h "1 2s"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v -s "1 2"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v -s "1 2s"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v -s -c "1 2"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -v -s -c "1 2s"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -vact "1 2"
+echo "sa" | valgrind --leak-check=full --track-origins=yes ./checker -g "1 2"
+ARG=`ruby -e "puts (1..30).to_a.shuffle.join(' ')"`; ./push_swap $$ARG | valgrind --leak-check=full --track-origins=yes ./checker -t $$ARG
+ARG=`ruby -e "puts (1..30).to_a.shuffle.join(' ')"`; valgrind --leak-check=full --track-origins=yes ./push_swap $$ARG

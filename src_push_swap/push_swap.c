@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/17 15:49:13 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 02:49:41 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/26 15:23:28 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main(int argc, char *argv[])
 	t_stack			*stack;
 	unsigned int	id;
 
-	if (argc > 1)
+	if (argc > 1 && argv[1][0])
 	{
 		id = 0;
 		stack = (t_stack *)ft_calloc(1, sizeof(t_stack));
