@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/25 19:31:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 17:20:49 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 18:22:38 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ static void	print_notes(void)
 			BHWHT, RESET, my_repo);
 }
 
-void	print_help_bonus(void)
+static void	print_options(void)
 {
 	printf("%s\n\nChecker - Checks if your push_swap messed up to sort!%s", \
 			BHWHT, RESET);
-	printf("%s\n\nUSAGE: ./checker [option] \"list of integers\"%s\n\n", \
+	printf("%s\n\nUSAGE: ./checker [1 option] \"list of integers\"%s\n\n", \
 			BHWHT, RESET);
 	printf("%sOPTIONS%s\n", BWHT, RESET);
 	printf("\t%s-v%s:%15sDisplay stacks after each instruction.\n", \
@@ -78,8 +78,15 @@ void	print_help_bonus(void)
 			BWHT, RESET, " ");
 	printf("\t%s-e%s:%15sDisplay stacks only after pressing enter.\n", \
 			BWHT, RESET, " ");
-	printf("\t%s-h%s:%15sPrints help for this %svery%s complex program.\n", \
+	printf("\t%s-h%s:%15sPrints help for this %svery%s complex program.\n\n", \
 			BWHT, RESET, " ", BWHT, RESET);
+	printf("%sNote:\tChecker only executes the very first%s\n", BWHT, RESET);
+	printf("\t%soption that was specified in the command.%s\n", BWHT, RESET);
+}
+
+void	print_help_bonus(void)
+{
+	print_options();
 	print_examples();
 	print_notes();
 }
