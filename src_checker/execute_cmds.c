@@ -6,13 +6,14 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/13 02:27:31 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 19:50:18 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 15:54:30 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "bonus.h"
 #include "../shared/stack.h"
+#include <unistd.h>
 
 void	init_table(t_jump *jump)
 {
@@ -36,17 +37,22 @@ void	execute_cmds(t_stack *stack, t_cmd cmd, t_flags flags)
 
 	i = 0;
 	init_table(&jump);
-	if (flags.bitfield & DEBUG)
+	if (flags.bitfield)
 		print_stacks_bonus(stack, cmd, i);
 	while (i < cmd.count)
 	{
 		jump.table[cmd.id[i]](stack, NO_PRINT);
-		if (flags.bitfield & DEBUG)
+		if (flags.bitfield & SLOMO)
+			sleep(1);
+		else if (flags.bitfield & ENTER)
+		{
+			hit_enter_bonus();
+			print_stacks_bonus(stack, cmd, i);
+		}
+		else if (flags.bitfield & DEBUG)
 			print_stacks_bonus(stack, cmd, i);
 		else if (flags.bitfield & COLORS)
 			print_stacks_color_bonus(stack, cmd, i);
-		if (flags.bitfield & SLOMO)
-			slow_motion_bonus();
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/25 19:31:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 14:19:11 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 15:25:29 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	print_help_bonus(void)
 			BWHT, RESET, " ");
 	printf("\t%s-c%s:%15sSame as '-v' %sbut %swith %snice %scolors%s.\n", \
 			BWHT, RESET, " ", BHRED, BHYEL, BHGRN, BHBLU, RESET);
-	printf("\t%s-s%s:%15sSlow motion. Prints stacks with a short delay.\n", \
+	printf("\t%s-s%s:%15sDisplay stacks in a slow mode.\n", \
 			BWHT, RESET, " ");
 	printf("\t%s-h%s:%15sPrints help for this %svery%s complex program.\n", \
 			BWHT, RESET, " ", BWHT, RESET);

@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/12 20:57:21 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/25 06:39:38 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 15:56:14 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	print_stacks_bonus(t_stack *stack, t_cmd cmd, int count)
 
 	pos = ft_lstsize(stack->a) + ft_lstsize(stack->b);
 	printf("------------------------------");
-	printf("\nInstruction #%d %s\n\n", count, cmd.list[count]);
+	printf("\nInstruction %d %s\n\n", count, cmd.list[count]);
 	print_stacks(stack, pos);
 	printf("%-4s%10s%-4s%10s\n", " ", "Stack A", " ", "Stack B");
 }
@@ -65,13 +65,18 @@ void	print_stacks_color_bonus(t_stack *stack, t_cmd cmd, int count)
 
 	pos = ft_lstsize(stack->a) + ft_lstsize(stack->b);
 	printf("------------------------------");
-	printf("\nInstruction #%d %s\n\n", count, cmd.list[count]);
+	printf("\nInstruction %d %s\n\n", count, cmd.list[count]);
 	print_stacks(stack, pos);
 	printf("%-4s%s%10s%s%-4s%10s%s\n", " ", BHRED, "Stack A", \
 	BHBLU, " ", "Stack B", RESET);
 }
 
-void	slow_motion_bonus(void)
+void	hit_enter_bonus(void)
 {
-	sleep(1);
+	char	enter;
+
+	enter = 0;
+	printf("Press enter to continue\n");
+	while (enter != '\r' && enter != '\n')
+		enter = getchar();
 }

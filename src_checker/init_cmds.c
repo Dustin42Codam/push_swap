@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 00:53:00 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/26 00:58:09 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 15:38:01 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	init_cmd(t_cmd *cmd, t_stack *stack)
 			clean_up(stack, 0, NO_ERROR);
 			exit(0);
 		}
-		evaluate_stack(stack);
+		else if (ft_lstsize(stack->a) > 1)
+			evaluate_stack(stack);
 		clean_up(stack, 0, NO_ERROR);
 		exit(0);
 	}

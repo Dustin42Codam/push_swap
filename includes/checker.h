@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:37:28 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 14:31:59 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 15:53:02 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 
 # define COLORS 1
 # define DEBUG 2
-# define SLOMO 4
-# define HELP 8
+# define ENTER 4
+# define SLOMO 8
+# define HELP 16
 
 # include "libft.h"
 # include "stack.h"
