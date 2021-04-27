@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/25 19:31:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 15:25:29 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/27 16:21:11 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,16 @@ void	print_help_bonus(void)
 {
 	printf("%s\n\nChecker - Checks if your push_swap messed up to sort!%s", \
 			BHWHT, RESET);
-	printf("%s\n\nUSAGE: ./checker [options] \"list of integers\"%s\n\n", \
+	printf("%s\n\nUSAGE: ./checker [option] \"list of integers\"%s\n\n", \
 			BHWHT, RESET);
 	printf("%sOPTIONS%s\n", BWHT, RESET);
 	printf("\t%s-v%s:%15sDisplay stacks after each instruction.\n", \
 			BWHT, RESET, " ");
 	printf("\t%s-c%s:%15sSame as '-v' %sbut %swith %snice %scolors%s.\n", \
 			BWHT, RESET, " ", BHRED, BHYEL, BHGRN, BHBLU, RESET);
-	printf("\t%s-s%s:%15sDisplay stacks in a slow mode.\n", \
+	printf("\t%s-s%s:%15sDisplay stacks in slow mode. [1s delay]\n", \
+			BWHT, RESET, " ");
+	printf("\t%s-e%s:%15sDisplay stacks only after pressing enter.\n", \
 			BWHT, RESET, " ");
 	printf("\t%s-h%s:%15sPrints help for this %svery%s complex program.\n", \
 			BWHT, RESET, " ", BWHT, RESET);
