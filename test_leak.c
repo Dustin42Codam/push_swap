@@ -17,4 +17,5 @@ int	main()
 	head->next->next->next = malloc(sizeof(t_list) * 1);
 	system("leaks a.out");
 	exit(0);
+	// return (0);
 }
