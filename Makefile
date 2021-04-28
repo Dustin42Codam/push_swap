@@ -103,12 +103,12 @@ check_error: all
 check_ko: $(NAME)
 	echo "sa\npb\nrrr" | ./checker 0 9 1 8 2 7 3 6 4 5
 	echo "sa\npb\nrrr" | ./checker "3 2 5 1"
-# 
+
 check_ok: $(NAME) $(NAME_PW)
 	echo "\0" | ./checker 0 1 2
 	echo "pb\nra\npb\nra\nsa\nra\npa\npa" | ./checker 0 9 1 8 2
 	echo "sa" | ./checker 1 0 2
-# 
+
 check_pw:
 	./push_swap 42
 	./push_swap 0 1 2 3

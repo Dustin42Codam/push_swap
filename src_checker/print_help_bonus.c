@@ -6,7 +6,7 @@
 /*   By: dkrecisz <dkrecisz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/25 19:31:33 by dkrecisz      #+#    #+#                 */
-/*   Updated: 2021/04/27 18:22:38 by dkrecisz      ########   odam.nl         */
+/*   Updated: 2021/04/28 14:03:47 by dkrecisz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,14 @@ static void	print_notes(void)
 	char	*shuf;
 	char	*cmd2;
 	char	*pyviz_repo;
-	char	*my_repo;
+	char	*pyviz_cmd;
 
 	ruby = "ARG=`ruby -e \"puts (-200..200).to_a.shuffle.join(' ')\"`;";
 	shuf = "ARG=$(shuf -i 0-400 -n 400 | tr '\\n' ' ');";
 	cmd2 = "./push_swap $ARG | ./checker $ARG";
 	pyviz_repo = "git clone https://github.com/o-reo/push_swap_visualizer";
-	my_repo = "git clone https://github.com/Dustin42Codam/push_swap.git";
+	pyviz_cmd = \
+	"python3 pyviz.py `ruby -e \"puts (-200..200).to_a.shuffle.join(' ')\"`";
 	printf("%s\n\nNOTES%s\n", BHWHT, RESET);
 	printf("%s\nHere are some useful commands for the eval:%s\n", \
 			BHWHT, RESET);
@@ -59,8 +60,7 @@ static void	print_notes(void)
 			BHWHT, RESET, shuf, cmd2);
 	printf("%s\n\n4. push_swap visualizer [requires python3]:%s\n$> %s\n", \
 			BHWHT, RESET, pyviz_repo);
-	printf("%s\n\n5. My repo for reference:%s\n$> %s\n\n", \
-			BHWHT, RESET, my_repo);
+	printf("$> %s\n\n", pyviz_cmd);
 }
 
 static void	print_options(void)
@@ -80,8 +80,8 @@ static void	print_options(void)
 			BWHT, RESET, " ");
 	printf("\t%s-h%s:%15sPrints help for this %svery%s complex program.\n\n", \
 			BWHT, RESET, " ", BWHT, RESET);
-	printf("%sNote:\tChecker only executes the very first%s\n", BWHT, RESET);
-	printf("\t%soption that was specified in the command.%s\n", BWHT, RESET);
+	printf("%sNote:\tYou can only specify one option to%s\n", BWHT, RESET);
+	printf("\t%sprevent print overlays.%s\n", BWHT, RESET);
 }
 
 void	print_help_bonus(void)
