@@ -24,7 +24,7 @@ the `push_swap` algortihm are indeed correct.
 
 `sb` (swap b): Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
 
-`ss` : sa and sb at the same time.
+`ss` : `sa` and `sb` at the same time.
 
 `pa` (push a): Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
 
@@ -34,7 +34,7 @@ the `push_swap` algortihm are indeed correct.
 
 `rb` (rotate b): Shift up all elements of stack b by 1. The first element becomes the last one.
 
-`rr` : ra and rb at the same time. rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.
+`rr` : `ra` and `rb` at the same time. rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.
 
 `rra` (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one
 
@@ -42,7 +42,7 @@ the `push_swap` algortihm are indeed correct.
 
 `rrr` : rra and rrb at the same time.
 
-## Installation + Compilation
+## Installation/Compilation
 
 ```bash
 $ git clone https://github.com/Dustin42Codam/push_swap.git
@@ -72,6 +72,19 @@ $ ./push_swap 42 8 12 451 23528 -12 2 0
 $ ./push_swap `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`
 ```
 
+## Checker
+
+The `checker` programm checks if `push_swap`'s instructions are properly sorting the stack.
+It works as follows:
+
+```
+$ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
+```
+
+If the checker displays "KO", it means that `push_swap` came up with a list
+of instructions that doesn't properly sort the numbers.
+It displays "OK" to indicate a proper sort. 
+
 ## Visualizing the algorithm
 
 The output of this project is not really interesting.
@@ -82,3 +95,8 @@ Just make sure that you have python3 installed.
 ```bash
 $ python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`
 ```
+
+### Algorithm in Action
+
+![](https://github.com/Dustin42Codam/push_swap/blob/master/push_swap.gif)
+
