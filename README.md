@@ -8,7 +8,11 @@ optimized data sorting.
 A seperate `checker` executable validates if the instructions which are outputed by
 the `push_swap` algortihm are indeed correct.
 
-### Final Grade: 125/100 :heavy_check_mark:
+## Grade
+
+### Mandatory Part: 100/100 :heavy_check_mark:
+### Bonus Part: 25/25 :heavy_check_mark:
+## Final Grade: 125/100 :heavy_check_mark:
 
 ## Overview
 
