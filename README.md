@@ -1,8 +1,8 @@
 
 # push_swap
 
-This C project is about sorting data on a stack, with a limited set of instructions, using
-the lowest possible number of actions. To succeed this program manipulates various
+This school project is about writing a program in C that sorts data on a stack with only a limited set of instructions
+and using the lowest possible number of actions. To succeed this program manipulates various
 types of algorithms and choose the most appropriate solution (out of many) for an
 optimized data sorting.
 A seperate `checker` executable validates if the instructions which are outputed by
