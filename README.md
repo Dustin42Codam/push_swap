@@ -74,7 +74,7 @@ $ ./push_swap `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`
 
 ## Checker
 
-The `checker` programm properly checks if `push_swap`'s instructions are properly sorting the stack.
+The `checker` programm checks if `push_swap`'s instructions are properly sorting the stack.
 It works as follows:
 
 ```
