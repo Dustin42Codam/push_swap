@@ -72,6 +72,19 @@ $ ./push_swap 42 8 12 451 23528 -12 2 0
 $ ./push_swap `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`
 ```
 
+## Checker
+
+The `checker` programm properly checks if `push_swap`'s instructions are properly sorting the stack.
+It works as follows:
+
+```
+$ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
+```
+
+If the checker displays "KO", it means that `push_swap` came up with a list
+of instructions that doesn't properly sort the numbers.
+It displays "OK" to indicate a proper sort. 
+
 ## Visualizing the algorithm
 
 The output of this project is not really interesting.
