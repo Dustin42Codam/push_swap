@@ -1,6 +1,4 @@
 
-### Final Grade: 125/100 :heavy_check_mark:
-
 # push_swap
 
 This C project is about sorting data on a stack, with a limited set of instructions, using
@@ -9,6 +7,8 @@ types of algorithms and choose the most appropriate solution (out of many) for a
 optimized data sorting.
 A seperate `checker` executable validates if the instructions which are outputed by
 the `push_swap` algortihm are indeed correct.
+
+### Final Grade: 125/100 :heavy_check_mark:
 
 ## Overview
 
