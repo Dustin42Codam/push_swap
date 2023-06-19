@@ -24,7 +24,7 @@ the `push_swap` algortihm are indeed correct.
 
 `sb` (swap b): Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
 
-`ss` : sa and sb at the same time.
+`ss` : `sa` and `sb` at the same time.
 
 `pa` (push a): Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
 
@@ -34,7 +34,7 @@ the `push_swap` algortihm are indeed correct.
 
 `rb` (rotate b): Shift up all elements of stack b by 1. The first element becomes the last one.
 
-`rr` : ra and rb at the same time. rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.
+`rr` : `ra` and `rb` at the same time. rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.
 
 `rra` (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one
 
@@ -42,7 +42,7 @@ the `push_swap` algortihm are indeed correct.
 
 `rrr` : rra and rrb at the same time.
 
-## Installation + Compilation
+## Installation/Compilation
 
 ```bash
 $ git clone https://github.com/Dustin42Codam/push_swap.git
