@@ -85,5 +85,5 @@ $ python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"`
 
 ### Algorithm in Action
 
-![](https://github.com/Dustin42Codam/push_swap/blob/main/push_swap.gif)
+![](https://github.com/Dustin42Codam/push_swap/blob/master/push_swap.gif)
 
