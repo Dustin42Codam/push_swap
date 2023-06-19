@@ -1,3 +1,6 @@
+
+### Final Grade: 125/100 :heavy_check_mark:
+
 # push_swap
 
 This C project is about sorting data on a stack, with a limited set of instructions, using
